@@ -1,193 +1,48 @@
 
-./Setup.hs,15
-main main1,2
-
-./.stack-work/downloaded/1ee8e106f4bf5eb9e964bc9f3caeb38f3be58c099f5fa21c2180a69ea5dbf3f3.git/Setup.hs,15
-main main1,2
-
-./.stack-work/downloaded/1ee8e106f4bf5eb9e964bc9f3caeb38f3be58c099f5fa21c2180a69ea5dbf3f3.git/Examples/Search.hs,15
-main main5,6
-
-./.stack-work/downloaded/1ee8e106f4bf5eb9e964bc9f3caeb38f3be58c099f5fa21c2180a69ea5dbf3f3.git/Examples/Albums.hs,15
-main main8,9
-
-./.stack-work/downloaded/1ee8e106f4bf5eb9e964bc9f3caeb38f3be58c099f5fa21c2180a69ea5dbf3f3.git/src/Utils/Spoty.hs,1681
-module Utils.SpotyUtils.Spoty2,3
-module Utils.Spoty.Types,Utils.Spoty.Types4,5
-baseURL, versionURL versionURL31,32
-baseURL,baseURL31,32
-baseURL baseURL32,33
-versionURL versionURL33,34
-type CountryID CountryID36,37
-data SearchCategorySearchCategory39,40
-  = SearchAlbum SearchAlbum40,41
-  | SearchArtist SearchArtist41,42
-  | SearchTrack SearchTrack42,43
-instance instance45,46
-build build51,52
-build build52,53
-build2 build255,56
-build2 build256,57
-getAlbum getAlbum59,60
-getAlbum getAlbum60,61
-getAlbumTracks getAlbumTracks63,64
-getAlbumTracks getAlbumTracks64,65
-getArtist getArtist67,68
-getArtist getArtist68,69
-getArtistAlbums getArtistAlbums71,72
-getArtistAlbums getArtistAlbums72,73
-type Predicate Predicate74,75
-type Predicate a a74,75
-makeProducer makeProducer78,79
-makeProducer makeProducer79,80
-extractInner extractInner96,97
-extractInner extractInner97,98
-getArtistTop getArtistTop102,103
-getArtistTop getArtistTop103,104
-getArtistRelated getArtistRelated109,110
-getArtistRelated getArtistRelated110,111
-getTrack getTrack115,116
-getTrack getTrack116,117
-getUser getUser119,120
-getUser getUser120,121
-search search123,124
-search search124,125
-searchArtist searchArtist138,139
-searchArtist searchArtist139,140
-searchAlbum searchAlbum142,143
-searchAlbum searchAlbum143,144
-searchTrack searchTrack146,147
-searchTrack searchTrack147,148
-fetchOne fetchOne150,151
-fetchOne fetchOne151,152
-fetchAll fetchAll154,155
-fetchAll fetchAll155,156
-fetch fetch158,159
-fetch fetch159,160
-fetchWith fetchWith162,163
-fetchWith fetchWith163,164
-grab grab167,168
-grab grab168,169
-
-./.stack-work/downloaded/1ee8e106f4bf5eb9e964bc9f3caeb38f3be58c099f5fa21c2180a69ea5dbf3f3.git/src/Utils/Spoty/Types.hs,3358
-module Utils.Spoty.Types Utils.Spoty.Types9,10
-type URL URL19,20
-type SpotID SpotID21,22
-type SpotURI SpotURI23,24
-require require26,27
-require require27,28
-parseStrMap parseStrMap33,34
-parseStrMap parseStrMap34,35
-data ExternalIDExternalID39,40
-  = ExternalIDExternalID40,41
-    _idType _idType42,43
-    _idIdentifier _idIdentifier43,44
-instance instance49,50
-data ExternalURLExternalURL53,54
-  = ExternalURLExternalURL54,55
-    _urlType _urlType56,57
-    _url _url57,58
-data ImageImage67,68
-  = ImageImage68,69
-    _imageHeight _imageHeight70,71
-    _imagePath _imagePath71,72
-    _imageWidth _imageWidth72,73
-data Paging Paging86,87
-  = PagingPaging87,88
-    _pagingHref _pagingHref89,90
-    _pagingItems _pagingItems90,91
-    _pagingLimit _pagingLimit91,92
-    _pagingNext _pagingNext92,93
-    _pagingOffset _pagingOffset93,94
-    _pagingPrevious _pagingPrevious94,95
-    _pagingTotal _pagingTotal95,96
-data UserUser113,114
-  = UserUser114,115
-    _userExternalUrls _userExternalUrls116,117
-    _userHref _userHref117,118
-    _userSpotifyID _userSpotifyID118,119
-    _userSpotifyURI _userSpotifyURI119,120
-data ArtistDetailsArtistDetails134,135
-  = ArtistDetailsArtistDetails135,136
-    _artistGenres _artistGenres137,138
-    _artistImages _artistImages138,139
-    _artistPopularity _artistPopularity139,140
-data ArtistArtist153,154
-  = ArtistArtist154,155
-    _artistExternalUrls _artistExternalUrls156,157
-    _artistHref _artistHref157,158
-    _artistSpotifyID _artistSpotifyID158,159
-    _artistName _artistName159,160
-    _artistSpotifyURI _artistSpotifyURI160,161
-    _artistDetails _artistDetails161,162
-data TrackDetailsTrackDetails178,179
-  = TrackDetailsTrackDetails179,180
-    _trackAvailableMarkets _trackAvailableMarkets181,182
-    _trackExternalIDs _trackExternalIDs182,183
-    _trackPopularity _trackPopularity183,184
-data TrackTrack197,198
-  = TrackTrack198,199
-    _trackArtists _trackArtists200,201
-    _trackDiscNumber _trackDiscNumber201,202
-    _trackDurationMs _trackDurationMs202,203
-    _trackExplicit _trackExplicit203,204
-    _trackExternalUrls _trackExternalUrls204,205
-    _trackHref _trackHref205,206
-    _trackSpotifyID _trackSpotifyID206,207
-    _trackName _trackName207,208
-    _trackPreviewURL _trackPreviewURL208,209
-    _trackNumber _trackNumber209,210
-    _trackSpotifyURI _trackSpotifyURI210,211
-    _trackDetails _trackDetails211,212
-data AlbumDetailsAlbumDetails234,235
-  = AlbumDetailsAlbumDetails235,236
-    _albumArtists _albumArtists237,238
-    _albumExternalIDs _albumExternalIDs238,239
-    _albumGenres _albumGenres239,240
-    _albumPopularity _albumPopularity240,241
-    _albumReleaseDate _albumReleaseDate241,242
-    _albumReleaseDatePrecision _albumReleaseDatePrecision242,243
-    _albumTracks _albumTracks243,244
-data AlbumAlbum261,262
-  = AlbumAlbum262,263
-    _albumType _albumType264,265
-    _albumAvailableMarkets _albumAvailableMarkets265,266
-    _albumExternalURLs _albumExternalURLs266,267
-    _albumHref _albumHref267,268
-    _albumSpotifyID _albumSpotifyID268,269
-    _albumImages _albumImages269,270
-    _albumName _albumName270,271
-    _albumSpotifyURI _albumSpotifyURI271,272
-    _albumDetails _albumDetails272,273
-
-./.stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/autogen/Paths_parody_bot.hs,970
-module Paths_parody_bot Paths_parody_bot0,1
-catchIO catchIO11,12
-catchIO catchIO12,13
-version version14,15
-version version15,16
-bindir, libdir, datadir, libexecdir, sysconfdir sysconfdir16,17
-bindir, libdir, datadir, libexecdir,libexecdir16,17
-bindir, libdir, datadir,datadir16,17
-bindir, libdir,libdir16,17
-bindir,bindir16,17
-bindir bindir18,19
-libdir libdir19,20
-datadir datadir20,21
-libexecdir libexecdir21,22
-sysconfdir sysconfdir22,23
-getBinDir, getLibDir, getDataDir, getLibexecDir, getSysconfDir getSysconfDir24,25
-getBinDir, getLibDir, getDataDir, getLibexecDir,getLibexecDir24,25
-getBinDir, getLibDir, getDataDir,getDataDir24,25
-getBinDir, getLibDir,getLibDir24,25
-getBinDir,getBinDir24,25
-getBinDir getBinDir25,26
-getLibDir getLibDir26,27
-getDataDir getDataDir27,28
-getLibexecDir getLibexecDir28,29
-getSysconfDir getSysconfDir29,30
-getDataFileName getDataFileName31,32
-getDataFileName getDataFileName32,33
+./Artists.hs,1565
+import import16,17
+o o22,23
+data ImagesElt ImagesElt25,26
+data ImagesElt = ImagesElt ImagesElt25,26
+    imagesEltHeight imagesEltHeight26,27
+    imagesEltUrl imagesEltUrl27,28
+    imagesEltWidth imagesEltWidth28,29
+instance instance32,33
+data ExternalUrls ExternalUrls41,42
+data ExternalUrls = ExternalUrls ExternalUrls41,42
+    externalUrlsSpotify externalUrlsSpotify42,43
+data Followers Followers55,56
+data Followers = Followers Followers55,56
+    followersHref followersHref56,57
+    followersTotal followersTotal57,58
+data ItemsElt ItemsElt70,71
+data ItemsElt = ItemsElt ItemsElt70,71
+    itemsEltImages itemsEltImages71,72
+    itemsEltExternalUrls itemsEltExternalUrls72,73
+    itemsEltUri itemsEltUri73,74
+    itemsEltHref itemsEltHref74,75
+    itemsEltPopularity itemsEltPopularity75,76
+    itemsEltName itemsEltName76,77
+    itemsEltFollowers itemsEltFollowers77,78
+    itemsEltId itemsEltId78,79
+    itemsEltGenres itemsEltGenres79,80
+    itemsEltType itemsEltType80,81
+data Artists Artists93,94
+data Artists = Artists Artists93,94
+    artistsNext artistsNext94,95
+    artistsOffset artistsOffset95,96
+    artistsItems artistsItems96,97
+    artistsHref artistsHref97,98
+    artistsTotal artistsTotal98,99
+    artistsLimit artistsLimit99,100
+    artistsPrevious artistsPrevious100,101
+data TopLevel TopLevel113,114
+data TopLevel = TopLevel TopLevel113,114
+    topLevelArtists topLevelArtists114,115
+parse parse129,130
+parse parse130,131
+main main141,142
+main main142,143
 
 ./SpotTypes.hs,2651
 module SpotTypes SpotTypes7,8
@@ -258,25 +113,32 @@ parse parse164,165
 main main175,176
 main main176,177
 
-./src/Main.hs,569
+./src/Main.hs,870
 module Main Main3,4
-spot_endpt spot_endpt15,16
-spot_endpt spot_endpt16,17
-spot_cli_id spot_cli_id18,19
-spot_cli_id spot_cli_id18,19
-spot_cli_secret spot_cli_secret19,20
-spot_cli_secret spot_cli_secret19,20
-spot_req_sec spot_req_sec20,21
-spot_req_sec spot_req_sec20,21
-spot_opts spot_opts22,23
-getAlbumNames getAlbumNames25,26
-getAlbumNames getAlbumNames26,27
-getAlbumIds getAlbumIds28,29
-getAlbumIds getAlbumIds29,30
-getSongsForAlbumID getSongsForAlbumID33,34
-getSongsForAlbumID getSongsForAlbumID34,35
-main main41,42
-main main42,43
+spot_endpt spot_endpt19,20
+spot_endpt spot_endpt20,21
+spot_cli_id spot_cli_id22,23
+spot_cli_id spot_cli_id22,23
+spot_cli_secret spot_cli_secret23,24
+spot_cli_secret spot_cli_secret23,24
+spot_req_sec spot_req_sec24,25
+spot_req_sec spot_req_sec24,25
+spot_opts spot_opts26,27
+getAlbumNames getAlbumNames29,30
+getAlbumNames getAlbumNames30,31
+getAlbumIds getAlbumIds32,33
+getAlbumIds getAlbumIds33,34
+getSongsForAlbumID getSongsForAlbumID37,38
+getSongsForAlbumID getSongsForAlbumID38,39
+extractNameArtist extractNameArtist50,51
+getExplicitParodies getExplicitParodies54,55
+getExplicitParodies getExplicitParodies55,56
+searchForTrackOpts searchForTrackOpts62,63
+searchForTrackOpts searchForTrackOpts63,64
+searchForTrack searchForTrack65,66
+searchForTrack searchForTrack67,68
+main main75,76
+main main76,77
 
 ./src/SpotTypes.hs,2651
 module SpotTypes SpotTypes7,8
@@ -347,47 +209,39 @@ parse parse164,165
 main main175,176
 main main176,177
 
-./Artists.hs,1565
-import import16,17
-o o22,23
-data ImagesElt ImagesElt25,26
-data ImagesElt = ImagesElt ImagesElt25,26
-    imagesEltHeight imagesEltHeight26,27
-    imagesEltUrl imagesEltUrl27,28
-    imagesEltWidth imagesEltWidth28,29
-instance instance32,33
-data ExternalUrls ExternalUrls41,42
-data ExternalUrls = ExternalUrls ExternalUrls41,42
-    externalUrlsSpotify externalUrlsSpotify42,43
-data Followers Followers55,56
-data Followers = Followers Followers55,56
-    followersHref followersHref56,57
-    followersTotal followersTotal57,58
-data ItemsElt ItemsElt70,71
-data ItemsElt = ItemsElt ItemsElt70,71
-    itemsEltImages itemsEltImages71,72
-    itemsEltExternalUrls itemsEltExternalUrls72,73
-    itemsEltUri itemsEltUri73,74
-    itemsEltHref itemsEltHref74,75
-    itemsEltPopularity itemsEltPopularity75,76
-    itemsEltName itemsEltName76,77
-    itemsEltFollowers itemsEltFollowers77,78
-    itemsEltId itemsEltId78,79
-    itemsEltGenres itemsEltGenres79,80
-    itemsEltType itemsEltType80,81
-data Artists Artists93,94
-data Artists = Artists Artists93,94
-    artistsNext artistsNext94,95
-    artistsOffset artistsOffset95,96
-    artistsItems artistsItems96,97
-    artistsHref artistsHref97,98
-    artistsTotal artistsTotal98,99
-    artistsLimit artistsLimit99,100
-    artistsPrevious artistsPrevious100,101
-data TopLevel TopLevel113,114
-data TopLevel = TopLevel TopLevel113,114
-    topLevelArtists topLevelArtists114,115
-parse parse129,130
-parse parse130,131
-main main141,142
-main main142,143
+./src/MyRegexes.hs,94
+module MyRegexes MyRegexes6,7
+parodyRegex parodyRegex10,11
+parodyRegex parodyRegex11,12
+
+./.stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/autogen/Paths_parody_bot.hs,970
+module Paths_parody_bot Paths_parody_bot0,1
+catchIO catchIO11,12
+catchIO catchIO12,13
+version version14,15
+version version15,16
+bindir, libdir, datadir, libexecdir, sysconfdir sysconfdir16,17
+bindir, libdir, datadir, libexecdir,libexecdir16,17
+bindir, libdir, datadir,datadir16,17
+bindir, libdir,libdir16,17
+bindir,bindir16,17
+bindir bindir18,19
+libdir libdir19,20
+datadir datadir20,21
+libexecdir libexecdir21,22
+sysconfdir sysconfdir22,23
+getBinDir, getLibDir, getDataDir, getLibexecDir, getSysconfDir getSysconfDir24,25
+getBinDir, getLibDir, getDataDir, getLibexecDir,getLibexecDir24,25
+getBinDir, getLibDir, getDataDir,getDataDir24,25
+getBinDir, getLibDir,getLibDir24,25
+getBinDir,getBinDir24,25
+getBinDir getBinDir25,26
+getLibDir getLibDir26,27
+getDataDir getDataDir27,28
+getLibexecDir getLibexecDir28,29
+getSysconfDir getSysconfDir29,30
+getDataFileName getDataFileName31,32
+getDataFileName getDataFileName32,33
+
+./Setup.hs,15
+main main1,2

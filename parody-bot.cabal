@@ -24,7 +24,8 @@ executable parody-bot
                      , json-autotype >= 1.0.10
                      , lens >= 4.13
                      , lens-aeson >= 1.0.0.5
+                     , pcre-heavy
+                     , safe >= 0.3.9
                      , text >= 1.2.2.0
                      , wreq >= 0.4.1.0
-
                       

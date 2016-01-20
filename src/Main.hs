@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings, DeriveGeneric, ScopedTypeVariables, NoImplicitPrelude #-}
+{-# LANGUAGE OverloadedStrings, DeriveGeneric, ScopedTypeVariables, NoImplicitPrelude, QuasiQuotes #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds -fno-warn-unused-matches #-}
 
 module Main where
@@ -10,8 +10,12 @@ import Data.Aeson.Lens
 import qualified Data.Text as T
 import qualified Data.ByteString as B
 import qualified Data.ByteString.Base64 as B64
+import Text.Regex.PCRE.Heavy as PH (Regex, re, scan)
+
 -- import qualified SpotTypes as S
 
+
+import MyRegexes
 
 spot_endpt :: String
 spot_endpt = "https://api.spotify.com/v1/"
@@ -39,6 +43,36 @@ getSongsForAlbumID xopt album_id = do
   let track_ids   = r ^.. responseBody . key "items" . values . key "id" . _String
   return $ zip track_names track_ids
 
+
+-- hasParodyStringInTitle :: T.Text -> Bool 
+-- hasParodyStringInTitle x = 
+
+
+extractNameArtist (_, [song_name, artist_name]) = Just (song_name, artist_name)
+extractNameArtist (_, _) = Nothing
+
+
+getExplicitParodies :: [T.Text] -> [T.Text]
+getExplicitParodies  = filter (\x -> length (scan parodyRegex x) > 0)
+  
+
+
+    
+----------------------------------------
+
+searchForTrackOpts :: Auth -> (T.Text, T.Text) -> Options
+searchForTrackOpts oab (song_name, artist_name) = defaults & param "type" .~ ["track"] & param "q" .~ [song_name ++ " " ++ artist_name] & auth ?~ oab
+
+searchForTrack :: Auth ->  (T.Text, T.Text) -> IO (Maybe (T.Text, T.Text))
+-- searchForTrack = error "undefined"
+searchForTrack oab (song_name, artist_name) = do
+  let my_opts = searchForTrackOpts oab (song_name, artist_name)
+  let endpt   = spot_endpt ++ "search" 
+  rn <- getWith my_opts endpt
+  let rid   = rn ^.. responseBody . key "tracks" . key "items" . values . key "uri" . _String
+  let rname = rn ^.. responseBody . key "tracks" . key "items" . values . key "name" . _String
+  return $ headMay $ zip rid rname
+
 main :: IO ()
 main = do
   putStrLn "hello world"
@@ -60,6 +94,15 @@ main = do
 
   songs_ids <- mapM (getSongsForAlbumID spot_auth) album_ids
   let song_id_list = concat songs_ids
+
+  let parody_song_id_list = filter (\(sn, ) ->  length (scan parodyRegex sn) > 0) song_id_list
+
+  ----------------------------------------
+  -- for each parody, run the regex
+
+
+
+
   putStrLn "done"
 
   
@@ -67,3 +110,4 @@ main = do
   -- shit
   -- r ^.. responseBody . key "items" . values . key "name" . _String
   -- r2 <- getWith spot_opts ("https://api.spotify.com/v1/artists/1bDWGdIC2hardyt55nlQgG/albums?offset=20&limit=20&album_type=single,album,compilation,appears_on,ep")
+
