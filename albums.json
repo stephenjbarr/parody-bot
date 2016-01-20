@@ -1,0 +1,489 @@
+{
+  "href" : "https://api.spotify.com/v1/artists/1bDWGdIC2hardyt55nlQgG/albums?offset=0&limit=20&album_type=single,album,compilation,appears_on,ep",
+  "items" : [ {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/36jlZKG1sNZQA2HbWdYveV"
+    },
+    "href" : "https://api.spotify.com/v1/albums/36jlZKG1sNZQA2HbWdYveV",
+    "id" : "36jlZKG1sNZQA2HbWdYveV",
+    "images" : [ {
+      "height" : 636,
+      "url" : "https://i.scdn.co/image/b6048e9a82fa8077cbd875000ff5b37ac4b1698e",
+      "width" : 640
+    }, {
+      "height" : 298,
+      "url" : "https://i.scdn.co/image/9721890a846cfdc56aac4040ca435c59c245e979",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/7624b6f6f86660c68ecca8e2fa41c912e47ca6db",
+      "width" : 64
+    } ],
+    "name" : "Mandatory Fun",
+    "type" : "album",
+    "uri" : "spotify:album:36jlZKG1sNZQA2HbWdYveV"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/7xioktcLt004PnB9nqwBWz"
+    },
+    "href" : "https://api.spotify.com/v1/albums/7xioktcLt004PnB9nqwBWz",
+    "id" : "7xioktcLt004PnB9nqwBWz",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/aaf821d122cc9442e7df6faac1102512f450c940",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/9b7627769115b1b324d6aae0f37477d32b32aabc",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/d0c091de20d5ab2b4cdeddd20df1c5f433044055",
+      "width" : 64
+    } ],
+    "name" : "Alpocalypse",
+    "type" : "album",
+    "uri" : "spotify:album:7xioktcLt004PnB9nqwBWz"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/2WMY5Qm6ztMQsAubpumeb4"
+    },
+    "href" : "https://api.spotify.com/v1/albums/2WMY5Qm6ztMQsAubpumeb4",
+    "id" : "2WMY5Qm6ztMQsAubpumeb4",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/cc805225c3fe358c89105893106cdd5b81f8189c",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/a8a83826495f68bb123b1a8b82d675a280fc065a",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/ef600e61882852094f37b895326406b4adf1d780",
+      "width" : 64
+    } ],
+    "name" : "The Essential Weird Al Yankovic",
+    "type" : "album",
+    "uri" : "spotify:album:2WMY5Qm6ztMQsAubpumeb4"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/5qNws4KuryY0VNrdtcDwkR"
+    },
+    "href" : "https://api.spotify.com/v1/albums/5qNws4KuryY0VNrdtcDwkR",
+    "id" : "5qNws4KuryY0VNrdtcDwkR",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/e66c3c5b1ac8671e294c57ecfa96afac8c861306",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/6494cb228ef7890950ae1e349c6709fb3fbfbd32",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/9444315ec554972a184b0d2e617458d299a2854c",
+      "width" : 64
+    } ],
+    "name" : "Straight Outta Lynwood",
+    "type" : "album",
+    "uri" : "spotify:album:5qNws4KuryY0VNrdtcDwkR"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/4VzAwj9nYwEqjY6JLaTwCm"
+    },
+    "href" : "https://api.spotify.com/v1/albums/4VzAwj9nYwEqjY6JLaTwCm",
+    "id" : "4VzAwj9nYwEqjY6JLaTwCm",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/ff039621aeb064fca8c23e6d2a716c3e98dbae84",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/8da8e5c52316ce6f81449eeecee1efdd5e06b0cc",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/d16939c40d7f5f154516d49b5df730a473863e29",
+      "width" : 64
+    } ],
+    "name" : "Poodle Hat",
+    "type" : "album",
+    "uri" : "spotify:album:4VzAwj9nYwEqjY6JLaTwCm"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/1vo55G8xWatvOHe38UF9yD"
+    },
+    "href" : "https://api.spotify.com/v1/albums/1vo55G8xWatvOHe38UF9yD",
+    "id" : "1vo55G8xWatvOHe38UF9yD",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/e0a1924cb98e9d4e6776f554f6bba22ef314447b",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/06c7a25e5ab0dbf1082abccecd39930ddd18ef29",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/ce49b3b650d348c8aa143edd58f7b55f62541a6f",
+      "width" : 64
+    } ],
+    "name" : "Running With Scissors",
+    "type" : "album",
+    "uri" : "spotify:album:1vo55G8xWatvOHe38UF9yD"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/0Jlz2oUJcRROhY8MFMp609"
+    },
+    "href" : "https://api.spotify.com/v1/albums/0Jlz2oUJcRROhY8MFMp609",
+    "id" : "0Jlz2oUJcRROhY8MFMp609",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/d8c3792b875c12f84849a45e64fbc34cd395c658",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/7a54568ff9324a5f1350994f4bca35bc7f383d9d",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/053717d09ada5b88b78b735d258dfc287ee3a8ad",
+      "width" : 64
+    } ],
+    "name" : "Bad Hair Day",
+    "type" : "album",
+    "uri" : "spotify:album:0Jlz2oUJcRROhY8MFMp609"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/4YgiPUj4ap8CLKHVf5RIZW"
+    },
+    "href" : "https://api.spotify.com/v1/albums/4YgiPUj4ap8CLKHVf5RIZW",
+    "id" : "4YgiPUj4ap8CLKHVf5RIZW",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/af0c8cf3b5a83b7775170ea7ffbc1de7e088d086",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/dc1ceefea84bf0188e4911eca2060689ad1db01c",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/6d9e2d8ca2f89d2ac4181761bdbb6159bbc2849b",
+      "width" : 64
+    } ],
+    "name" : "Greatest Hits, Vol. 2",
+    "type" : "album",
+    "uri" : "spotify:album:4YgiPUj4ap8CLKHVf5RIZW"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/6qe9hRwFfbcgtXXsif6BQZ"
+    },
+    "href" : "https://api.spotify.com/v1/albums/6qe9hRwFfbcgtXXsif6BQZ",
+    "id" : "6qe9hRwFfbcgtXXsif6BQZ",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/64b6cfe4d357d89eb0153b7e0f4ab8c69c4006da",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/64a1e7e9577bea72ea1a8392e6a0aa6f15626fe8",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/c28abfbcbad80ba5e7fccec50ffee37c6f5d5c91",
+      "width" : 64
+    } ],
+    "name" : "Permanent Record: Al In The Box",
+    "type" : "album",
+    "uri" : "spotify:album:6qe9hRwFfbcgtXXsif6BQZ"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/5yrh4YoCqCyqyTmFPIRilv"
+    },
+    "href" : "https://api.spotify.com/v1/albums/5yrh4YoCqCyqyTmFPIRilv",
+    "id" : "5yrh4YoCqCyqyTmFPIRilv",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/3e8708fb57055005df53942d1759193092a937b5",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/ad227158d7e5027fc564803d79ceb4a11e7ae20c",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/fc1da0824b1f27cbe8ea3f1c03ed547e62ad6221",
+      "width" : 64
+    } ],
+    "name" : "Alapalooza",
+    "type" : "album",
+    "uri" : "spotify:album:5yrh4YoCqCyqyTmFPIRilv"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/6qr3P9IV7X8zSmRWUfKTNL"
+    },
+    "href" : "https://api.spotify.com/v1/albums/6qr3P9IV7X8zSmRWUfKTNL",
+    "id" : "6qr3P9IV7X8zSmRWUfKTNL",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/a01293f5e7bc79be95928a494c3c2907c653aebb",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/dfb51e1b9c36be196eca015182a4efd1730f21e2",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/aae374ee3d54f55b73e2647d4731e02df967d456",
+      "width" : 64
+    } ],
+    "name" : "Off The Deep End",
+    "type" : "album",
+    "uri" : "spotify:album:6qr3P9IV7X8zSmRWUfKTNL"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/65hW4JLei0jX9lTbzVMiBx"
+    },
+    "href" : "https://api.spotify.com/v1/albums/65hW4JLei0jX9lTbzVMiBx",
+    "id" : "65hW4JLei0jX9lTbzVMiBx",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/48e35be5cddfc636276be872d1a6993f23f4331b",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/ea3cbc7bd2332a3b9c8520040775eb6beb3f88bb",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/50d9b65e081d11b13804c7c770313c45efa653e9",
+      "width" : 64
+    } ],
+    "name" : "UHF: Weird Al Yankovic",
+    "type" : "album",
+    "uri" : "spotify:album:65hW4JLei0jX9lTbzVMiBx"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/2pHmvW8zaVfxHJaEjkeAsS"
+    },
+    "href" : "https://api.spotify.com/v1/albums/2pHmvW8zaVfxHJaEjkeAsS",
+    "id" : "2pHmvW8zaVfxHJaEjkeAsS",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/7a24859f5a352253edff222587db804357167ae6",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/b2dc7a5bbf2772670a40bbb540298b38c7adcdad",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/111b0e6b68ba1c4d8c551d41d2d673f89e33acea",
+      "width" : 64
+    } ],
+    "name" : "Even Worse",
+    "type" : "album",
+    "uri" : "spotify:album:2pHmvW8zaVfxHJaEjkeAsS"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/30OiW6q8Ug7n0u2WN9vIfe"
+    },
+    "href" : "https://api.spotify.com/v1/albums/30OiW6q8Ug7n0u2WN9vIfe",
+    "id" : "30OiW6q8Ug7n0u2WN9vIfe",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/cd1b815414db08fd1a258cb3262ef90c6b4ff866",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/0fac6139f86ffdef46473effa708a473bc0dbf16",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/e9078a165bc3d8c0298a97c65935029d06aa0290",
+      "width" : 64
+    } ],
+    "name" : "Greatest Hits",
+    "type" : "album",
+    "uri" : "spotify:album:30OiW6q8Ug7n0u2WN9vIfe"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/3cn1jehwLTYqxT4tS1qiug"
+    },
+    "href" : "https://api.spotify.com/v1/albums/3cn1jehwLTYqxT4tS1qiug",
+    "id" : "3cn1jehwLTYqxT4tS1qiug",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/d03694562104cd5505f213ee05792daa1641a7aa",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/b35f1377ec820a177b9311bc4ccfbcfc3ff27703",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/ecd954230bb200c4560fa7f9470f285a2c8d234d",
+      "width" : 64
+    } ],
+    "name" : "Polka Party",
+    "type" : "album",
+    "uri" : "spotify:album:3cn1jehwLTYqxT4tS1qiug"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/4sug9Au5Rrm34TwdTAux5O"
+    },
+    "href" : "https://api.spotify.com/v1/albums/4sug9Au5Rrm34TwdTAux5O",
+    "id" : "4sug9Au5Rrm34TwdTAux5O",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/e59a43454091cb5ab211830866e24b54db30dc3b",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/8dcfd1ed963c70580093e098e9249c336c0ad533",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/c120401e71fd5e9c6f6439dcaa7717b500e3c6db",
+      "width" : 64
+    } ],
+    "name" : "Dare To Be Stupid",
+    "type" : "album",
+    "uri" : "spotify:album:4sug9Au5Rrm34TwdTAux5O"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/5mIwtOp8f0flDHmn8jOxDD"
+    },
+    "href" : "https://api.spotify.com/v1/albums/5mIwtOp8f0flDHmn8jOxDD",
+    "id" : "5mIwtOp8f0flDHmn8jOxDD",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/04c901c9b66e763f726ac368db7c1dca70a7d3e1",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/8d9dfc9b9b8854c81198eba08d5cb8c937c41be4",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/167fe019c8e5c0039ec0ef2c6a2554b7fe521d92",
+      "width" : 64
+    } ],
+    "name" : "In 3-D",
+    "type" : "album",
+    "uri" : "spotify:album:5mIwtOp8f0flDHmn8jOxDD"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/1gnhuWdl30liEUM2jy9lxl"
+    },
+    "href" : "https://api.spotify.com/v1/albums/1gnhuWdl30liEUM2jy9lxl",
+    "id" : "1gnhuWdl30liEUM2jy9lxl",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/6cef8afca68d6af8de55d14a7691889d082d5454",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/be79d5d6025fca7a01d1ec3587a8914b435889ef",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/e0a4abf6c159d2dd8e1c6ddadf7c5a52e56811e8",
+      "width" : 64
+    } ],
+    "name" : "Weird Al Yankovic",
+    "type" : "album",
+    "uri" : "spotify:album:1gnhuWdl30liEUM2jy9lxl"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "CA", "GB", "IE", "SE" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/6NgYB7YNm2hxF1LydLQp7P"
+    },
+    "href" : "https://api.spotify.com/v1/albums/6NgYB7YNm2hxF1LydLQp7P",
+    "id" : "6NgYB7YNm2hxF1LydLQp7P",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/61061dc339c61352586529d8f801a93bf38f52aa",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/45a6f352eb47762ac6d78cbd9e06cc58c494b755",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/4a1ac8a41fb9a2416509e766efbc326d8daf3b94",
+      "width" : 64
+    } ],
+    "name" : "White & Nerdy",
+    "type" : "album",
+    "uri" : "spotify:album:6NgYB7YNm2hxF1LydLQp7P"
+  }, {
+    "album_type" : "single",
+    "available_markets" : [ "US" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/5QtS6SlEWipGtE1cWh5ezH"
+    },
+    "href" : "https://api.spotify.com/v1/albums/5QtS6SlEWipGtE1cWh5ezH",
+    "id" : "5QtS6SlEWipGtE1cWh5ezH",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/0fbdbb5a30f82fb9a4c20f2a9a4b985452f4a1bf",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/e04d411fb81bbbc2d148932d2fe6ae742852ffa8",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/9f2af1e792a94a4c2e84839f26ee64710f7fdc50",
+      "width" : 64
+    } ],
+    "name" : "Handle With Care (Live)",
+    "type" : "album",
+    "uri" : "spotify:album:5QtS6SlEWipGtE1cWh5ezH"
+  } ],
+  "limit" : 20,
+  "next" : "https://api.spotify.com/v1/artists/1bDWGdIC2hardyt55nlQgG/albums?offset=20&limit=20&album_type=single,album,compilation,appears_on,ep",
+  "offset" : 0,
+  "previous" : null,
+  "total" : 34
+}

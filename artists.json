@@ -1,0 +1,135 @@
+{
+  "artists" : {
+    "href" : "https://api.spotify.com/v1/search?query=Weird+Al&offset=0&limit=20&type=artist",
+    "items" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/1bDWGdIC2hardyt55nlQgG"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 180684
+      },
+      "genres" : [ "comic" ],
+      "href" : "https://api.spotify.com/v1/artists/1bDWGdIC2hardyt55nlQgG",
+      "id" : "1bDWGdIC2hardyt55nlQgG",
+      "images" : [ {
+        "height" : 563,
+        "url" : "https://i.scdn.co/image/07e0c0c36c88bb1c5e81b35ed480fc3a53c51638",
+        "width" : 1000
+      }, {
+        "height" : 360,
+        "url" : "https://i.scdn.co/image/3eff554f64597b2d60ae969f439d89a53662e2c7",
+        "width" : 640
+      }, {
+        "height" : 113,
+        "url" : "https://i.scdn.co/image/328be0adde9d2ec3e09b2e393c3c4d10b50bac84",
+        "width" : 200
+      }, {
+        "height" : 36,
+        "url" : "https://i.scdn.co/image/6361ce20f9fee9890f771f9c7720a78e927f656e",
+        "width" : 64
+      } ],
+      "name" : "\"Weird Al\" Yankovic",
+      "popularity" : 58,
+      "type" : "artist",
+      "uri" : "spotify:artist:1bDWGdIC2hardyt55nlQgG"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/5nhFkAFFfVWSby7BqxJDcY"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 4
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/artists/5nhFkAFFfVWSby7BqxJDcY",
+      "id" : "5nhFkAFFfVWSby7BqxJDcY",
+      "images" : [ ],
+      "name" : "Weird Al Isaakovic",
+      "popularity" : 0,
+      "type" : "artist",
+      "uri" : "spotify:artist:5nhFkAFFfVWSby7BqxJDcY"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/2EKaGHaz3fuI1aitUwTcvt"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 12
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/artists/2EKaGHaz3fuI1aitUwTcvt",
+      "id" : "2EKaGHaz3fuI1aitUwTcvt",
+      "images" : [ ],
+      "name" : "Barnes & Barnes w/ Weird Al Yankovic",
+      "popularity" : 0,
+      "type" : "artist",
+      "uri" : "spotify:artist:2EKaGHaz3fuI1aitUwTcvt"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/4U8L0rMRSFLDmurmiEwACf"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 1
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/artists/4U8L0rMRSFLDmurmiEwACf",
+      "id" : "4U8L0rMRSFLDmurmiEwACf",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/07355f3a69956bbf81280fea870e2ac8ade6a582",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/9b49cb414000fbc5bba86ffff37652d166a1f7c7",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/272f3379503beb3f4e11c26f212a801f225d4276",
+        "width" : 64
+      } ],
+      "name" : "Brandon Flowers, Britt Daniel, Dhani Harrison, Jonathan Bates, Wayne Coyne & \"Weird Al\" Yankovic",
+      "popularity" : 0,
+      "type" : "artist",
+      "uri" : "spotify:artist:4U8L0rMRSFLDmurmiEwACf"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/4ramVBiKZWZdsvR3NlEdUd"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 1
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/artists/4ramVBiKZWZdsvR3NlEdUd",
+      "id" : "4ramVBiKZWZdsvR3NlEdUd",
+      "images" : [ ],
+      "name" : "Karaoke - \"Weird Al\" Yankovic",
+      "popularity" : 0,
+      "type" : "artist",
+      "uri" : "spotify:artist:4ramVBiKZWZdsvR3NlEdUd"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/4ypCDQyyU6KfdXcMptC3C1"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 0
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/artists/4ypCDQyyU6KfdXcMptC3C1",
+      "id" : "4ypCDQyyU6KfdXcMptC3C1",
+      "images" : [ ],
+      "name" : "Karaoke - Yankovic, \"Weird Al\"",
+      "popularity" : 0,
+      "type" : "artist",
+      "uri" : "spotify:artist:4ypCDQyyU6KfdXcMptC3C1"
+    } ],
+    "limit" : 20,
+    "next" : null,
+    "offset" : 0,
+    "previous" : null,
+    "total" : 6
+  }
+}

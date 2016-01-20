@@ -1,0 +1,309 @@
+{
+  "href" : "https://api.spotify.com/v1/albums/36jlZKG1sNZQA2HbWdYveV/tracks?offset=0&limit=20",
+  "items" : [ {
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/1bDWGdIC2hardyt55nlQgG"
+      },
+      "href" : "https://api.spotify.com/v1/artists/1bDWGdIC2hardyt55nlQgG",
+      "id" : "1bDWGdIC2hardyt55nlQgG",
+      "name" : "\"Weird Al\" Yankovic",
+      "type" : "artist",
+      "uri" : "spotify:artist:1bDWGdIC2hardyt55nlQgG"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "disc_number" : 1,
+    "duration_ms" : 176093,
+    "explicit" : false,
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/4ZJGobiy4ayWSdKfoqMRlX"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/4ZJGobiy4ayWSdKfoqMRlX",
+    "id" : "4ZJGobiy4ayWSdKfoqMRlX",
+    "name" : "Handy",
+    "preview_url" : "https://p.scdn.co/mp3-preview/f05a6bb1a6cf3243f8f357646f75b2bf234dfc62",
+    "track_number" : 1,
+    "type" : "track",
+    "uri" : "spotify:track:4ZJGobiy4ayWSdKfoqMRlX"
+  }, {
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/1bDWGdIC2hardyt55nlQgG"
+      },
+      "href" : "https://api.spotify.com/v1/artists/1bDWGdIC2hardyt55nlQgG",
+      "id" : "1bDWGdIC2hardyt55nlQgG",
+      "name" : "\"Weird Al\" Yankovic",
+      "type" : "artist",
+      "uri" : "spotify:artist:1bDWGdIC2hardyt55nlQgG"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "disc_number" : 1,
+    "duration_ms" : 225386,
+    "explicit" : false,
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/37cY8HOyrpSc3QbeHQBc3C"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/37cY8HOyrpSc3QbeHQBc3C",
+    "id" : "37cY8HOyrpSc3QbeHQBc3C",
+    "name" : "Lame Claim to Fame",
+    "preview_url" : "https://p.scdn.co/mp3-preview/e1431a4b03ebed102173d807ddaf71f7d352361f",
+    "track_number" : 2,
+    "type" : "track",
+    "uri" : "spotify:track:37cY8HOyrpSc3QbeHQBc3C"
+  }, {
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/1bDWGdIC2hardyt55nlQgG"
+      },
+      "href" : "https://api.spotify.com/v1/artists/1bDWGdIC2hardyt55nlQgG",
+      "id" : "1bDWGdIC2hardyt55nlQgG",
+      "name" : "\"Weird Al\" Yankovic",
+      "type" : "artist",
+      "uri" : "spotify:artist:1bDWGdIC2hardyt55nlQgG"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "disc_number" : 1,
+    "duration_ms" : 142880,
+    "explicit" : false,
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/0WJTdVboKc2KI1DzzAWyYM"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/0WJTdVboKc2KI1DzzAWyYM",
+    "id" : "0WJTdVboKc2KI1DzzAWyYM",
+    "name" : "Foil",
+    "preview_url" : "https://p.scdn.co/mp3-preview/e255adabee8cb9609c94fd8a9c918dcd27ffe248",
+    "track_number" : 3,
+    "type" : "track",
+    "uri" : "spotify:track:0WJTdVboKc2KI1DzzAWyYM"
+  }, {
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/1bDWGdIC2hardyt55nlQgG"
+      },
+      "href" : "https://api.spotify.com/v1/artists/1bDWGdIC2hardyt55nlQgG",
+      "id" : "1bDWGdIC2hardyt55nlQgG",
+      "name" : "\"Weird Al\" Yankovic",
+      "type" : "artist",
+      "uri" : "spotify:artist:1bDWGdIC2hardyt55nlQgG"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "disc_number" : 1,
+    "duration_ms" : 134760,
+    "explicit" : false,
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/2cMQ8NDfKUCnTVnMndFEge"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/2cMQ8NDfKUCnTVnMndFEge",
+    "id" : "2cMQ8NDfKUCnTVnMndFEge",
+    "name" : "Sports Song",
+    "preview_url" : "https://p.scdn.co/mp3-preview/782e419dcba02070716bea61bd43d7cf6d864edc",
+    "track_number" : 4,
+    "type" : "track",
+    "uri" : "spotify:track:2cMQ8NDfKUCnTVnMndFEge"
+  }, {
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/1bDWGdIC2hardyt55nlQgG"
+      },
+      "href" : "https://api.spotify.com/v1/artists/1bDWGdIC2hardyt55nlQgG",
+      "id" : "1bDWGdIC2hardyt55nlQgG",
+      "name" : "\"Weird Al\" Yankovic",
+      "type" : "artist",
+      "uri" : "spotify:artist:1bDWGdIC2hardyt55nlQgG"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "disc_number" : 1,
+    "duration_ms" : 223120,
+    "explicit" : false,
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/4JqQWAr47pGEoaMArpA7Z3"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/4JqQWAr47pGEoaMArpA7Z3",
+    "id" : "4JqQWAr47pGEoaMArpA7Z3",
+    "name" : "Word Crimes",
+    "preview_url" : "https://p.scdn.co/mp3-preview/cdf398632f656ebb6488d23d0ec1d7a4125c9fd0",
+    "track_number" : 5,
+    "type" : "track",
+    "uri" : "spotify:track:4JqQWAr47pGEoaMArpA7Z3"
+  }, {
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/1bDWGdIC2hardyt55nlQgG"
+      },
+      "href" : "https://api.spotify.com/v1/artists/1bDWGdIC2hardyt55nlQgG",
+      "id" : "1bDWGdIC2hardyt55nlQgG",
+      "name" : "\"Weird Al\" Yankovic",
+      "type" : "artist",
+      "uri" : "spotify:artist:1bDWGdIC2hardyt55nlQgG"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "disc_number" : 1,
+    "duration_ms" : 220600,
+    "explicit" : false,
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/4zrFUqfb57yiRbVGUCeM6H"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/4zrFUqfb57yiRbVGUCeM6H",
+    "id" : "4zrFUqfb57yiRbVGUCeM6H",
+    "name" : "My Own Eyes",
+    "preview_url" : "https://p.scdn.co/mp3-preview/336905109629aafcd0808cb532e8098cbf6f55e8",
+    "track_number" : 6,
+    "type" : "track",
+    "uri" : "spotify:track:4zrFUqfb57yiRbVGUCeM6H"
+  }, {
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/1bDWGdIC2hardyt55nlQgG"
+      },
+      "href" : "https://api.spotify.com/v1/artists/1bDWGdIC2hardyt55nlQgG",
+      "id" : "1bDWGdIC2hardyt55nlQgG",
+      "name" : "\"Weird Al\" Yankovic",
+      "type" : "artist",
+      "uri" : "spotify:artist:1bDWGdIC2hardyt55nlQgG"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "disc_number" : 1,
+    "duration_ms" : 246000,
+    "explicit" : false,
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/5mN0UUIKMVtnfsW8lhwzqY"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/5mN0UUIKMVtnfsW8lhwzqY",
+    "id" : "5mN0UUIKMVtnfsW8lhwzqY",
+    "name" : "NOW That's What I Call Polka!",
+    "preview_url" : "https://p.scdn.co/mp3-preview/6f8a36bce6ea69ac21f087a4fab977f543e4b1e6",
+    "track_number" : 7,
+    "type" : "track",
+    "uri" : "spotify:track:5mN0UUIKMVtnfsW8lhwzqY"
+  }, {
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/1bDWGdIC2hardyt55nlQgG"
+      },
+      "href" : "https://api.spotify.com/v1/artists/1bDWGdIC2hardyt55nlQgG",
+      "id" : "1bDWGdIC2hardyt55nlQgG",
+      "name" : "\"Weird Al\" Yankovic",
+      "type" : "artist",
+      "uri" : "spotify:artist:1bDWGdIC2hardyt55nlQgG"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "disc_number" : 1,
+    "duration_ms" : 268760,
+    "explicit" : false,
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/6qtiyGOzgHIfIX4wJmit2g"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/6qtiyGOzgHIfIX4wJmit2g",
+    "id" : "6qtiyGOzgHIfIX4wJmit2g",
+    "name" : "Mission Statement",
+    "preview_url" : "https://p.scdn.co/mp3-preview/dec6652e7e61eb50d5e74573bce6f77f6e29c6bb",
+    "track_number" : 8,
+    "type" : "track",
+    "uri" : "spotify:track:6qtiyGOzgHIfIX4wJmit2g"
+  }, {
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/1bDWGdIC2hardyt55nlQgG"
+      },
+      "href" : "https://api.spotify.com/v1/artists/1bDWGdIC2hardyt55nlQgG",
+      "id" : "1bDWGdIC2hardyt55nlQgG",
+      "name" : "\"Weird Al\" Yankovic",
+      "type" : "artist",
+      "uri" : "spotify:artist:1bDWGdIC2hardyt55nlQgG"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "disc_number" : 1,
+    "duration_ms" : 176293,
+    "explicit" : false,
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/6UtYhM8FwONx3G4C413WIp"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/6UtYhM8FwONx3G4C413WIp",
+    "id" : "6UtYhM8FwONx3G4C413WIp",
+    "name" : "Inactive",
+    "preview_url" : "https://p.scdn.co/mp3-preview/f7e65cf1c708e83ebc76f0773bd7ad7e6366b255",
+    "track_number" : 9,
+    "type" : "track",
+    "uri" : "spotify:track:6UtYhM8FwONx3G4C413WIp"
+  }, {
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/1bDWGdIC2hardyt55nlQgG"
+      },
+      "href" : "https://api.spotify.com/v1/artists/1bDWGdIC2hardyt55nlQgG",
+      "id" : "1bDWGdIC2hardyt55nlQgG",
+      "name" : "\"Weird Al\" Yankovic",
+      "type" : "artist",
+      "uri" : "spotify:artist:1bDWGdIC2hardyt55nlQgG"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "disc_number" : 1,
+    "duration_ms" : 193706,
+    "explicit" : false,
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/740yKLJWt6JI14mthJOIyu"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/740yKLJWt6JI14mthJOIyu",
+    "id" : "740yKLJWt6JI14mthJOIyu",
+    "name" : "First World Problems",
+    "preview_url" : "https://p.scdn.co/mp3-preview/4a7dc4913e163b549a8f32955ba208c26f5c924c",
+    "track_number" : 10,
+    "type" : "track",
+    "uri" : "spotify:track:740yKLJWt6JI14mthJOIyu"
+  }, {
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/1bDWGdIC2hardyt55nlQgG"
+      },
+      "href" : "https://api.spotify.com/v1/artists/1bDWGdIC2hardyt55nlQgG",
+      "id" : "1bDWGdIC2hardyt55nlQgG",
+      "name" : "\"Weird Al\" Yankovic",
+      "type" : "artist",
+      "uri" : "spotify:artist:1bDWGdIC2hardyt55nlQgG"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "disc_number" : 1,
+    "duration_ms" : 173120,
+    "explicit" : false,
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/1ZqKCseNe8FIZRDyl2E2Ac"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/1ZqKCseNe8FIZRDyl2E2Ac",
+    "id" : "1ZqKCseNe8FIZRDyl2E2Ac",
+    "name" : "Tacky",
+    "preview_url" : "https://p.scdn.co/mp3-preview/1525744dec37cc7124f57dddd291d042ed8426ae",
+    "track_number" : 11,
+    "type" : "track",
+    "uri" : "spotify:track:1ZqKCseNe8FIZRDyl2E2Ac"
+  }, {
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/1bDWGdIC2hardyt55nlQgG"
+      },
+      "href" : "https://api.spotify.com/v1/artists/1bDWGdIC2hardyt55nlQgG",
+      "id" : "1bDWGdIC2hardyt55nlQgG",
+      "name" : "\"Weird Al\" Yankovic",
+      "type" : "artist",
+      "uri" : "spotify:artist:1bDWGdIC2hardyt55nlQgG"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "disc_number" : 1,
+    "duration_ms" : 545386,
+    "explicit" : false,
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/1zYtQplEXZK3EeQYjQdynI"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/1zYtQplEXZK3EeQYjQdynI",
+    "id" : "1zYtQplEXZK3EeQYjQdynI",
+    "name" : "Jackson Park Express",
+    "preview_url" : "https://p.scdn.co/mp3-preview/1bcf0d7b77829867d224587118a587a7eab21dee",
+    "track_number" : 12,
+    "type" : "track",
+    "uri" : "spotify:track:1zYtQplEXZK3EeQYjQdynI"
+  } ],
+  "limit" : 20,
+  "next" : null,
+  "offset" : 0,
+  "previous" : null,
+  "total" : 12
+}
