@@ -113,32 +113,42 @@ parse parse164,165
 main main175,176
 main main176,177
 
-./src/Main.hs,870
+./src/Main.hs,1214
 module Main Main3,4
-spot_endpt spot_endpt19,20
-spot_endpt spot_endpt20,21
-spot_cli_id spot_cli_id22,23
-spot_cli_id spot_cli_id22,23
-spot_cli_secret spot_cli_secret23,24
-spot_cli_secret spot_cli_secret23,24
-spot_req_sec spot_req_sec24,25
-spot_req_sec spot_req_sec24,25
-spot_opts spot_opts26,27
-getAlbumNames getAlbumNames29,30
-getAlbumNames getAlbumNames30,31
-getAlbumIds getAlbumIds32,33
-getAlbumIds getAlbumIds33,34
-getSongsForAlbumID getSongsForAlbumID37,38
-getSongsForAlbumID getSongsForAlbumID38,39
-extractNameArtist extractNameArtist50,51
-getExplicitParodies getExplicitParodies54,55
-getExplicitParodies getExplicitParodies55,56
-searchForTrackOpts searchForTrackOpts62,63
-searchForTrackOpts searchForTrackOpts63,64
-searchForTrack searchForTrack65,66
-searchForTrack searchForTrack67,68
-main main75,76
-main main76,77
+type TrackName TrackName34,35
+type TrackID TrackID35,36
+type TrackURI TrackURI36,37
+type ArtistName ArtistName39,40
+type ArtistID ArtistID40,41
+type ArtistURI ArtistURI41,42
+type AlbumName AlbumName43,44
+type AlbumID AlbumID44,45
+type AlbumURI AlbumURI45,46
+spot_endpt spot_endpt54,55
+spot_endpt spot_endpt55,56
+spot_cli_id spot_cli_id57,58
+spot_cli_id spot_cli_id57,58
+spot_cli_secret spot_cli_secret58,59
+spot_cli_secret spot_cli_secret58,59
+spot_req_sec spot_req_sec59,60
+spot_req_sec spot_req_sec59,60
+getAlbumNames getAlbumNames66,67
+getAlbumNames getAlbumNames67,68
+getAlbumIds getAlbumIds69,70
+getAlbumIds getAlbumIds70,71
+getSongsForAlbumID getSongsForAlbumID73,74
+getSongsForAlbumID getSongsForAlbumID74,75
+extractNameArtist extractNameArtist86,87
+getExplicitParodies getExplicitParodies90,91
+getExplicitParodies getExplicitParodies91,92
+searchForTrackOpts searchForTrackOpts98,99
+searchForTrackOpts searchForTrackOpts99,100
+searchForTrack searchForTrack101,102
+searchForTrack searchForTrack103,104
+filterSndNothing filterSndNothing118,119
+filterSndNothing filterSndNothing119,120
+main main122,123
+main main123,124
 
 ./src/SpotTypes.hs,2651
 module SpotTypes SpotTypes7,8
