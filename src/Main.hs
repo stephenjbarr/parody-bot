@@ -179,7 +179,7 @@ getExplicitParodies  = filter (\x -> length (scan parodyRegex x) > 0)
   
 -- | Given a list of tuples where the second element is a Maybe type,
 -- filter out the Nothing values.
-filterSndNothing :: (IsSequence seq, Element seq ~ (t, Maybe a)) => seq -> seq
+-- filterSndNothing :: (IsSequence seq, Element seq ~ (t, Maybe a)) => seq -> seq
 filterSndNothing = filter (\(_, m) -> isJust m)
 
 
@@ -224,17 +224,18 @@ main = do
   let al_parodies_by_regexp   = filter (\x -> length (scan parodyRegex (track_name x)) > 0) al_tracks
   let p_extract = ( fromJust .  (fmap extractNameArtist) .    headMay .   (scan parodyRegex) . track_name)
   let parody_and_original =  map (\(a,b) -> (a, fromJust b))  $ filterSndNothing $ zip al_parodies_by_regexp (fmap p_extract al_parodies_by_regexp)
-  parodied_tracks <- mapM ( (searchForTrack oab) . snd) parody_and_original
+  parodied_tracks :: [Maybe SpotTrack] <- mapM ( (searchForTrack oab) . snd) parody_and_original
 
   
   -- Finally, zip together the al_parodies_by_regexp and parodied_tracks, taking care to remove the nothing values.
-  let al_and_original =  map (\(a,b) -> (a, fromJust b))  $ filterSndNothing $ zip al_parodies_by_regexp parodied_tracks
+  let al_and_original :: [(SpotTrack, SpotTrack)] =  map (\(a,b) -> (a, fromJust b))  $ filterSndNothing $ zip al_parodies_by_regexp parodied_tracks
 
 
   -- Create a playlist and add 
+  -- user_id <- getMyUserID spot_auth
 
-  user_id <- getMyUserID spot_auth
-
+  -- mapM_ putStrLn al_and_original
+  print (length al_and_original)
   putStrLn "done"
 
   
