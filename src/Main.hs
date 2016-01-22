@@ -155,6 +155,12 @@ addToPlaylist auth_opts spl tracks = do
   return $  r ^. responseStatus
 
 
+----------------------------------------
+-- Add the items into Neo4j database
+
+
+
+
 
 ----------------------------------------
 -- https://developer.spotify.com/web-api/authorization-guide/
@@ -192,6 +198,8 @@ getOauth2Token = do
 
 
 
+
+----------------------------------------
   
 main :: IO ()
 main = do
