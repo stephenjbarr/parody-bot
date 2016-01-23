@@ -21,11 +21,13 @@ executable parody-bot
                      , base64-bytestring >= 1.0.0.1
                      , bytestring >= 0.10.6.0
                      , classy-prelude >= 0.12.5
+                     , hashable >= 1.2.3.3
                      , json-autotype >= 1.0.10
                      , lens >= 4.13
                      , lens-aeson >= 1.0.0.5
                      , pcre-heavy
                      , safe >= 0.3.9
                      , text >= 1.2.2.0
+                     , unordered-containers >= 0.2.5.1
                      , wreq >= 0.4.1.0
                       

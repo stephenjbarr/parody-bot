@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings, DeriveGeneric, ScopedTypeVariables, NoImplicitPrelude, QuasiQuotes #-}
+{-# LANGUAGE OverloadedStrings, DeriveGeneric, ScopedTypeVariables, NoImplicitPrelude, QuasiQuotes, GeneralizedNewtypeDeriving #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds -fno-warn-unused-matches #-}
 
 module Main where
@@ -12,6 +12,10 @@ import qualified Data.ByteString as B
 import qualified Data.ByteString.Base64 as B64
 import Text.Regex.PCRE.Heavy as PH (Regex, re, scan)
 import Data.Maybe (fromJust)
+
+import qualified  Data.HashMap.Strict as HMS
+import Data.Hashable
+
 -- import qualified SpotTypes as S
 import MyRegexes
 
@@ -56,34 +60,39 @@ data SpotTrack = SpotTrack {
     track_name :: TrackName
   , track_id   :: TrackID
   , track_uri  :: TrackURI  
-} deriving (Show, Generic)
+} deriving (Show, Generic, Eq)
+
 
 data SpotArtist = SpotArtist {
     artist_name :: ArtistName
   , artist_id   :: ArtistID
   , artist_uri  :: ArtistURI  
-} deriving (Show, Generic)
+} deriving (Show, Generic, Eq)
 
 data SpotAlbum = SpotAlbum {
     album_name :: AlbumName
   , album_id   :: AlbumID
   , album_uri  :: AlbumURI  
-} deriving (Show, Generic)
+} deriving (Show, Generic, Eq)
 
 data SpotPlaylist = SpotPlaylist {
     playlist_name :: PlaylistName
   , playlist_id   :: PlaylistID
   , playlist_uri  :: PlaylistURI  
-} deriving (Show, Generic)
+} deriving (Show, Generic, Eq)
 
 data UriList = UriList {
   uris :: [T.Text]  
-} deriving (Show, Generic)
+} deriving (Show, Generic, Eq)
 
 instance FromJSON UriList
 instance ToJSON   UriList
 
-
+instance Hashable SpotTrack
+instance Hashable SpotArtist
+instance Hashable SpotAlbum
+instance Hashable SpotPlaylist
+instance Hashable UriList
 
 ----------------------------------------
 -- Lenses for common things to access
@@ -180,7 +189,8 @@ getExplicitParodies  = filter (\x -> length (scan parodyRegex x) > 0)
 -- | Given a list of tuples where the second element is a Maybe type,
 -- filter out the Nothing values.
 -- filterSndNothing :: (IsSequence seq, Element seq ~ (t, Maybe a)) => seq -> seq
-filterSndNothing = filter (\(_, m) -> isJust m)
+-- filterSndNothing :: [(a, Maybe b)] -> [(a,b)]
+-- filterSndNothing = filter (\(x, m) -> isJust m)
 
 
 getOauth2Token ::  IO (Auth, Options)
@@ -197,7 +207,14 @@ getOauth2Token = do
 
 
 
+filterListJustSnd :: [(a, Maybe b)] -> [Maybe (a,b)]
+filterListJustSnd abl = map f0 abl
+  where
+    f0 (x,y) = case (x, y) of (c, Just d) -> Just (c, d)
+                              _           -> Nothing
 
+makePossibleDict :: (Eq a, Hashable a) => [(a, Maybe b)] -> HMS.HashMap a b
+makePossibleDict abl = HMS.fromList $ catMaybes $ filterListJustSnd abl
 
 ----------------------------------------
   
@@ -221,21 +238,26 @@ main = do
   let al_tracks :: [SpotTrack] = concat al_track_0
 
   -- For each track, lookup the explicit parodies
-  let al_parodies_by_regexp   = filter (\x -> length (scan parodyRegex (track_name x)) > 0) al_tracks
+  let al_parodies_by_regexp :: [SpotTrack]  = filter (\x -> length (scan parodyRegex (track_name x)) > 0) al_tracks
   let p_extract = ( fromJust .  (fmap extractNameArtist) .    headMay .   (scan parodyRegex) . track_name)
-  let parody_and_original =  map (\(a,b) -> (a, fromJust b))  $ filterSndNothing $ zip al_parodies_by_regexp (fmap p_extract al_parodies_by_regexp)
-  parodied_tracks :: [Maybe SpotTrack] <- mapM ( (searchForTrack oab) . snd) parody_and_original
+  let parody_and_original  = makePossibleDict $ zip al_parodies_by_regexp (fmap p_extract al_parodies_by_regexp)
+
+  
+
+  -- let parody_and_original =  map (\(a,b) -> (a, fromJust b))  $ filterSndNothing $ 
+  -- parodied_tracks :: [Maybe SpotTrack] <- mapM ( (searchForTrack oab) . snd) parody_and_original
 
   
   -- Finally, zip together the al_parodies_by_regexp and parodied_tracks, taking care to remove the nothing values.
-  let al_and_original :: [(SpotTrack, SpotTrack)] =  map (\(a,b) -> (a, fromJust b))  $ filterSndNothing $ zip al_parodies_by_regexp parodied_tracks
+  -- let al_and_original = zip al_parodies_by_regexp parodied_tracks
+  -- let al_and_original :: [(SpotTrack, SpotTrack)] =  map (\(a,b) -> (a, fromJust b))  $ filterSndNothing $ zip al_parodies_by_regexp parodied_tracks
 
 
   -- Create a playlist and add 
   -- user_id <- getMyUserID spot_auth
 
   -- mapM_ putStrLn al_and_original
-  print (length al_and_original)
+  
   putStrLn "done"
 
   
