@@ -244,19 +244,16 @@ main = do
 
   
 
-  -- let parody_and_original =  map (\(a,b) -> (a, fromJust b))  $ filterSndNothing $ 
-  -- parodied_tracks :: [Maybe SpotTrack] <- mapM ( (searchForTrack oab) . snd) parody_and_original
+  -- For each original, look it up.
+  matchedTracks <- mapM (searchForTrack oab) (map snd (HMS.toList parody_and_original))
+  let parody_and_original = makePossibleDict $ zip al_parodies_by_regexp matchedTracks
+
 
   
-  -- Finally, zip together the al_parodies_by_regexp and parodied_tracks, taking care to remove the nothing values.
-  -- let al_and_original = zip al_parodies_by_regexp parodied_tracks
-  -- let al_and_original :: [(SpotTrack, SpotTrack)] =  map (\(a,b) -> (a, fromJust b))  $ filterSndNothing $ zip al_parodies_by_regexp parodied_tracks
-
-
   -- Create a playlist and add 
   -- user_id <- getMyUserID spot_auth
 
-  -- mapM_ putStrLn al_and_original
+
   
   putStrLn "done"
 
