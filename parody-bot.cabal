@@ -18,13 +18,15 @@ executable parody-bot
   main-is:             Main.hs
   default-language:    Haskell2010
   other-modules:       SpotTypes
-                       MyRegexes
+                     , NeoParodyInterface
+                     , MyRegexes
   build-depends:       aeson >= 0.10.0.0
                      , base >= 4.7 && < 5
                      , base64-bytestring >= 1.0.0.1
                      , bytestring >= 0.10.6.0
                      , classy-prelude >= 0.12.5
                      , hashable >= 1.2.3.3
+                     , haskell-neo4j-client >= 0.3.2.0
                      , json-autotype >= 1.0.10
                      , lens >= 4.13
                      , lens-aeson >= 1.0.0.5

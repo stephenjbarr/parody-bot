@@ -2,7 +2,21 @@
 {-# OPTIONS_GHC -fno-warn-unused-binds -fno-warn-unused-matches #-}
 
 
+-----------------------------------------------------------------------------
+-- |
+-- Module      :  SpotTypes
+-- Copyright   :  (C) 2015-2016, Stephen J. Barr
+-- License     :  None
+-- Maintainer  :  Stephen J. Barr <stephen@planetbarr.com>
+-- Stability   :  experimental
+--
+-- Types for the ParodyBot, including some very simple access to Spotify.
+----------------------------------------------------------------------------
+
+
 module SpotTypes where
+
+
 
 ----------------------------------------
 
@@ -32,6 +46,8 @@ type PlaylistName  = Text
 type PlaylistID    = Text
 type PlaylistURI   = Text
 
+--------------------------------------------------------------------------------
+
 data SpotTrack = SpotTrack {
     track_name :: TrackName
   , track_id   :: TrackID
@@ -57,6 +73,25 @@ data SpotPlaylist = SpotPlaylist {
   , playlist_uri  :: PlaylistURI  
 } deriving (Show, Generic, Eq)
 
+
+data SpotItem = 
+    SPTrack    SpotTrack
+  | SPArtist   SpotArtist
+  | SPAlbum    SpotAlbum
+  | SPPlaylist SpotPlaylist deriving (Show, Eq, Generic)
+
+--------------------------------------------------------------------------------
+
+spotItemName :: SpotItem -> Text
+spotItemName si = case si of
+   SPTrack x    -> "Track"
+   SPArtist x   -> "Artist"
+   SPAlbum x    -> "Album"
+   SPPlaylist x -> "Playlist"
+
+--------------------------------------------------------------------------------
+
+
 data UriList = UriList {
   uris :: [Text]  
 } deriving (Show, Generic, Eq)
@@ -68,4 +103,5 @@ instance Hashable SpotTrack
 instance Hashable SpotArtist
 instance Hashable SpotAlbum
 instance Hashable SpotPlaylist
+instance Hashable SpotItem
 instance Hashable UriList

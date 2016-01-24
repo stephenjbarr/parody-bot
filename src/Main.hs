@@ -18,7 +18,7 @@ import qualified  Data.HashMap.Strict as HMS
 
 import SpotTypes
 import MyRegexes
-
+import NeoParodyInterface
 
 
 
@@ -33,11 +33,6 @@ spot_endpt = "https://api.spotify.com/v1/"
 spot_cli_id     :: Text = "ed8c0a8b345b41c59793a92f7a1984ee"
 spot_cli_secret :: Text = "93f44712e4414dee8182a98cc1c6b184"
 spot_req_sec :: Text    = spot_cli_id ++  ":" ++ spot_cli_secret
-
-
---------------------------------------------------------------------------------
--- some simple data types
-
 
 ----------------------------------------
 -- Lenses for common things to access
