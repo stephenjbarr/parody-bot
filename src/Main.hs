@@ -14,9 +14,9 @@ import Text.Regex.PCRE.Heavy as PH (Regex, re, scan)
 import Data.Maybe (fromJust)
 
 import qualified  Data.HashMap.Strict as HMS
-import Data.Hashable
 
--- import qualified SpotTypes as S
+
+import SpotTypes
 import MyRegexes
 
 
@@ -30,7 +30,7 @@ import MyRegexes
 spot_endpt :: String
 spot_endpt = "https://api.spotify.com/v1/"
 
-spot_cli_id     :: Text     = "ed8c0a8b345b41c59793a92f7a1984ee"
+spot_cli_id     :: Text = "ed8c0a8b345b41c59793a92f7a1984ee"
 spot_cli_secret :: Text = "93f44712e4414dee8182a98cc1c6b184"
 spot_req_sec :: Text    = spot_cli_id ++  ":" ++ spot_cli_secret
 
@@ -38,61 +38,6 @@ spot_req_sec :: Text    = spot_cli_id ++  ":" ++ spot_cli_secret
 --------------------------------------------------------------------------------
 -- some simple data types
 
-type UserID     = T.Text
-
-type TrackName  = T.Text
-type TrackID    = T.Text
-type TrackURI   = T.Text
-
-type ArtistName = T.Text
-type ArtistID   = T.Text
-type ArtistURI  = T.Text
-
-type AlbumName  = T.Text
-type AlbumID    = T.Text
-type AlbumURI   = T.Text
-
-type PlaylistName  = T.Text
-type PlaylistID    = T.Text
-type PlaylistURI   = T.Text
-
-data SpotTrack = SpotTrack {
-    track_name :: TrackName
-  , track_id   :: TrackID
-  , track_uri  :: TrackURI  
-} deriving (Show, Generic, Eq)
-
-
-data SpotArtist = SpotArtist {
-    artist_name :: ArtistName
-  , artist_id   :: ArtistID
-  , artist_uri  :: ArtistURI  
-} deriving (Show, Generic, Eq)
-
-data SpotAlbum = SpotAlbum {
-    album_name :: AlbumName
-  , album_id   :: AlbumID
-  , album_uri  :: AlbumURI  
-} deriving (Show, Generic, Eq)
-
-data SpotPlaylist = SpotPlaylist {
-    playlist_name :: PlaylistName
-  , playlist_id   :: PlaylistID
-  , playlist_uri  :: PlaylistURI  
-} deriving (Show, Generic, Eq)
-
-data UriList = UriList {
-  uris :: [T.Text]  
-} deriving (Show, Generic, Eq)
-
-instance FromJSON UriList
-instance ToJSON   UriList
-
-instance Hashable SpotTrack
-instance Hashable SpotArtist
-instance Hashable SpotAlbum
-instance Hashable SpotPlaylist
-instance Hashable UriList
 
 ----------------------------------------
 -- Lenses for common things to access
@@ -163,9 +108,6 @@ addToPlaylist auth_opts spl tracks = do
   r <- postWith auth_opts endpt (toJSON tracks)
   return $  r ^. responseStatus
 
-
-----------------------------------------
--- Add the items into Neo4j database
 
 
 
