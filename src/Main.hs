@@ -14,7 +14,7 @@ import Text.Regex.PCRE.Heavy as PH (Regex, re, scan)
 import Data.Maybe (fromJust)
 
 import qualified  Data.HashMap.Strict as HMS
-
+import qualified  Data.List as L
 
 import SpotTypes
 import MyRegexes
@@ -153,6 +153,10 @@ filterListJustSnd abl = map f0 abl
 makePossibleDict :: (Eq a, Hashable a) => [(a, Maybe b)] -> HMS.HashMap a b
 makePossibleDict abl = HMS.fromList $ catMaybes $ filterListJustSnd abl
 
+combine2Tupe :: [(a,a)] -> [a]
+combine2Tupe x = L.concat $ map (\(x,y) -> [x] ++ [y]) x
+
+
 ----------------------------------------
   
 main :: IO ()
@@ -177,21 +181,33 @@ main = do
   -- For each track, lookup the explicit parodies
   let al_parodies_by_regexp :: [SpotTrack]  = filter (\x -> length (scan parodyRegex (track_name x)) > 0) al_tracks
   let p_extract = ( fromJust .  (fmap extractNameArtist) .    headMay .   (scan parodyRegex) . track_name)
-  let parody_and_original  = makePossibleDict $ zip al_parodies_by_regexp (fmap p_extract al_parodies_by_regexp)
+  let originals_by_regexp = (fmap p_extract al_parodies_by_regexp)
+  let parody_and_original  = makePossibleDict $ zip al_parodies_by_regexp originals_by_regexp
 
   
-
+  let po_list = HMS.toList parody_and_original
   -- For each original, look it up.
-  matchedTracks <- mapM (searchForTrack oab) (map snd (HMS.toList parody_and_original))
-  let parody_and_original = makePossibleDict $ zip al_parodies_by_regexp matchedTracks
+  matchedTracks <- mapM (searchForTrack oab) (map snd po_list)
 
 
+
+  let po_track_mapping :: HMS.HashMap SpotTrack SpotTrack = makePossibleDict $ zip (map fst po_list) matchedTracks
+  -- Filter out the duplicates
+  let po_no_dupes :: [(SpotTrack, SpotTrack)] = L.nubBy (\x y -> (track_name (fst x)) == (track_name (fst y))) $ filter (\(a, b) -> (a /= b)) $ HMS.toList po_track_mapping
   
+
+  -- Iterate over this entire list, adding all of the tracks, with a parody certainty of 1
+
+
+
   -- Create a playlist and add 
   -- user_id <- getMyUserID spot_auth
-
+  
 
   
+
+
+
   putStrLn "done"
 
   
