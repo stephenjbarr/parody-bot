@@ -16,7 +16,7 @@
 module NeoParodyInterface where
 
 import           ClassyPrelude
-import           Database.Neo4j
+import           Database.Neo4j       as N
 import           Database.Neo4j.Graph as G
 import           Database.Neo4j.Batch as B
 import           Database.Neo4j.Types as NT
@@ -122,6 +122,26 @@ addParodiedRelationshipAllNew parody original certainty = run $ B.runBatch $ do
   return ()
 
 --------------------------------------------------------------------------------
+
+addItem' :: SpotItem -> IO (NodePath)
+addItem' si = run $ do
+  let n_props = itemToProperties si
+  n <- N.createNode n_props
+  return $ nodePath n
+
+  -- return n
+
+-- addItem si = run $ do
+--   n <- addItem' si
+--   let n_labs  = itemToLabels si
+--   N.addLabels n_labs n
+--   return $ n
+
+-- addItem :: SpotItem -> IO (NodeIdentifier a)
+-- addItem si = run $ B.runBatch $ do
+--   n <- itemToNode si
+--   labs <- B.addLabels (itemToLabels si) n
+--   return n
 
 lookupItem :: SpotItem -> IO (Maybe Node)
 lookupItem = error "ndy"

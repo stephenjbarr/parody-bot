@@ -156,9 +156,13 @@ makePossibleDict abl = HMS.fromList $ catMaybes $ filterListJustSnd abl
 combine2Tupe :: [(a,a)] -> [a]
 combine2Tupe x = L.concat $ map (\(x,y) -> [x] ++ [y]) x
 
+--------------------------------------------------------------------------------
 
-----------------------------------------
-  
+
+
+
+--------------------------------------------------------------------------------
+
 main :: IO ()
 main = do
   putStrLn "hello world"
