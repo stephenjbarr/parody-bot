@@ -104,7 +104,8 @@ addToPlaylist auth_opts spl tracks = do
   return $  r ^. responseStatus
 
 
-
+getArtistForTrack :: Options -> SpotTrack -> IO (SpotArtist)
+getArtistForTrack = error "ndy"
 
 
 
@@ -191,24 +192,39 @@ main = do
   
   let po_list = HMS.toList parody_and_original
   -- For each original, look it up.
-  matchedTracks <- mapM (searchForTrack oab) (map snd po_list)
+  matched_tracks <- mapM (searchForTrack oab) (map snd po_list)
 
 
-
-  let po_track_mapping :: HMS.HashMap SpotTrack SpotTrack = makePossibleDict $ zip (map fst po_list) matchedTracks
+  ----------------------------------------
+  -- CREATE THE PARODY LIST
+  let po_track_mapping :: HMS.HashMap SpotTrack SpotTrack = makePossibleDict $ zip (map fst po_list) matched_tracks
   -- Filter out the duplicates
   let po_no_dupes :: [(SpotTrack, SpotTrack)] = L.nubBy (\x y -> (track_name (fst x)) == (track_name (fst y))) $ filter (\(a, b) -> (a /= b)) $ HMS.toList po_track_mapping
   
 
+  ----------------------------------------
+  -- POPULATE THE GRAPH
+
+  -- For each song, add it to the graph, returning a NodePath. Construct: track_path_map = HashMap SpotTrack NodePath
+  let all_tracks = al_tracks ++ (catMaybes matched_tracks)
+  tp0 <- sequence $ map (addItem . SPTrack) all_tracks
+  let track_path_map = HMS.fromList $ zip all_tracks tp0
+
+  -- For each song, lookup artist, dedupe list, add artists to graph, 
+     -- artist_paths HashMap SpotArtist NodePath     
+  all_artists <- sequence $ map (getArtistForTrack spot_auth) all_tracks
+  aa0 <- sequence $ map (addItem . SPArtist) all_artists               
+  let artist_path_map = HMS.fromList $ zip all_artists aa0
+
+-- For each [(SpotArtist, SpotTrack)], lookup (NodePath Track) (NodePath Artist), and create relatinship 
+  _ <- sequence $ map (\(ax, tx) -> artistAuthoredTrackExisting artist_path_map track_path_map ax tx) $ zip all_artists all_tracks
+
+  -- Iterate over the [(Parody, Original)] list, adding the "IS_PARODY_OF" relationship
+  _ <- sequence $ map (\(px, ox) ->  addParodiedRelationshipExisting track_path_map px ox 1.0) $ po_no_dupes
+  
+
   -- Iterate over this entire list, adding all of the tracks, with a parody certainty of 1
-
-  _ <- sequence $ map (\(p,o) -> addParodiedRelationshipAllNew (SPTrack p) (SPTrack o) 1.0) po_no_dupes
-
-  -- Create a playlist and add 
-  -- user_id <- getMyUserID spot_auth
-  
-
-  
+  -- _ <- sequence $ map (\(p,o) -> addParodiedRelationshipAllNew (SPTrack p) (SPTrack o) 1.0) po_no_dupes
 
 
 
@@ -216,26 +232,3 @@ main = do
 
   
 
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
--- CODE SCRAPS
-  -- songs_ids <- mapM (getSongsForAlbumID spot_auth) album_ids
-  -- let song_id_list = concat songs_ids
-
-  -- let parody_song_id_list = filter (\(sn, _ ) ->  length (scan parodyRegex sn) > 0) song_id_list
-
-  -- ----------------------------------------
-  -- -- for each parody, run the regex
-
-  -- -- let parody_name_artist   = map (head . extractNameArtist . (scan parodyRegex) . snd) parody_song_id_list
-  -- let regexed_parody_names = fmap  (  headMay .  (scan parodyRegex) . fst) parody_song_id_list
-  -- let extracted            = catMaybes $  (fmap . fmap) extractNameArtist regexed_parody_names
-  -- let matched_parodies     = filterSndNothing $ zip parody_song_id_list extracted
-  
-  -- matched_tracks <- mapM (searchForTrack oab) (map (fromJust . snd) matched_parodies)
-  
-
-
-  -- let new_pl_name = "sjb_parody_match_v0"
-  -- makePlaylist spot_auth new_pl_name

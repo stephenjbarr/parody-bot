@@ -121,6 +121,9 @@ addParodiedRelationshipAllNew parody original certainty = run $ B.runBatch $ do
   B.createRelationship "IS_PARODY_OF" rel_prop p_node o_node
   return ()
 
+addParodiedRelationshipExisting :: HashMap SpotTrack NodePath -> SpotTrack -> SpotTrack -> Double -> IO Graph
+addParodiedRelationshipExisting = error "ndy"
+
 --------------------------------------------------------------------------------
 
 addItem' :: SpotItem -> IO (NodePath)
@@ -129,28 +132,35 @@ addItem' si = run $ do
   n <- N.createNode n_props
   return $ nodePath n
 
-  -- return n
 
--- addItem si = run $ do
---   n <- addItem' si
---   let n_labs  = itemToLabels si
---   N.addLabels n_labs n
---   return $ n
+addItem :: SpotItem -> IO (NodePath)
+addItem si = do
+  let n_labs  = itemToLabels si
+  n <-  addItem' si
+  _ <- run $ runBatch (B.addLabels n_labs n)
+  return n
 
--- addItem :: SpotItem -> IO (NodeIdentifier a)
--- addItem si = run $ B.runBatch $ do
---   n <- itemToNode si
---   labs <- B.addLabels (itemToLabels si) n
---   return n
+
+--------------------------------------------------------------------------------
+
+
+
+
 
 lookupItem :: SpotItem -> IO (Maybe Node)
 lookupItem = error "ndy"
 
-artistAuthoredTrack :: SpotArtist -> SpotAlbum -> IO Graph
+artistAuthoredTrack :: SpotArtist -> SpotTrack -> IO Graph
 artistAuthoredTrack = error "not defined yet"
+
+artistAuthoredTrackExisting :: HashMap SpotArtist NodePath -> HashMap SpotTrack NodePath -> SpotArtist -> SpotTrack -> IO Graph
+artistAuthoredTrackExisting = error "not defined yet"
+
 
 addParodiedRelationship :: SpotTrack -> SpotTrack -> Double -> IO Graph
 addParodiedRelationship original parody certainty = error "ndy"
 
 addSameArticleRelationship :: SpotItem -> SpotItem  -> IO Graph
 addSameArticleRelationship = error "ndy"
+
+
