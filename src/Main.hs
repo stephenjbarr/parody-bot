@@ -198,7 +198,7 @@ main = do
 
   -- Iterate over this entire list, adding all of the tracks, with a parody certainty of 1
 
-
+  _ <- sequence $ map (\(p,o) -> addParodiedRelationshipAllNew (SPTrack p) (SPTrack o) 1.0) po_no_dupes
 
   -- Create a playlist and add 
   -- user_id <- getMyUserID spot_auth

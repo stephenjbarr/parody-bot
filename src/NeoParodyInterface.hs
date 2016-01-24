@@ -100,14 +100,26 @@ itemToLabels si = case si of
 -- as part of a batch operation. This is the function that should be exported, and
 -- can use more specific helper functions if necessary.
 -- The node needs to also have a label
--- itemToNode :: NodeBatchIdentifier a => SpotItem -> BatchState Identity          ()
+-- itemToNode :: NodeBatchIdentifier a => SpotItem -> BatchState Identity ()
 itemToNode item = do
   let item_props = itemToProperties item
-  n0 <- B.createNode item_props
-  l  <- B.addLabels (itemToLabels item) n0
-  return ()
+  n0 <- B.createNode item_props 
+  -- l  <- B.addLabels (itemToLabels item) n0
+  return n0
 
 --------------------------------------------------------------------------------
+
+addParodiedRelationshipAllNew :: SpotItem -> SpotItem -> Double -> IO Graph
+addParodiedRelationshipAllNew parody original certainty = run $ B.runBatch $ do
+  p_node <- itemToNode parody
+  p_lab  <- B.addLabels (itemToLabels parody) p_node
+
+  o_node <- itemToNode original
+  o_lab  <- B.addLabels (itemToLabels original) o_node
+
+  let rel_prop = HMS.fromList [("certainty" |: (certainty ))]
+  B.createRelationship "IS_PARODY_OF" rel_prop p_node o_node
+  return ()
 
 --------------------------------------------------------------------------------
 
