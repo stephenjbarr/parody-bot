@@ -35,4 +35,5 @@ executable parody-bot
                      , text >= 1.2.2.0
                      , unordered-containers >= 0.2.5.1
                      , wreq >= 0.4.1.0
+                     , yaml >= 0.8.15.2
                       
