@@ -24,6 +24,9 @@ data AlchemyApiCred = AlchemyApiCred { alchemy_api_key :: String } deriving (Sho
 instance FromJSON AlchemyApiCred
 
 
+----------------------------------------
+-- READ THE API KEY FROM SETTINGS
+
 getAlchemyCred :: FilePath -> IO AlchemyApiCred
 getAlchemyCred fp = do
   content <- BS.readFile fp -- (4)
@@ -32,13 +35,14 @@ getAlchemyCred fp = do
     Nothing             -> error "Could not parse config file."
     Just creds          -> return $ creds
 
+
+
+
+
 ----------------------------------------
--- READ THE API KEY FROM SETTINGS
+-- DEFINE SOME ENDPOINTS
+
+url_entities_endpt :: Text
+url_entities_endpt = "http://gateway-a.watsonplatform.net/calls/url/URLGetRankedNamedEntities"
 
 
-
-
-
--- Some static data 
-
--- http://gateway-a.watsonplatform.net/calls/url/URLGetRankedNamedEntities

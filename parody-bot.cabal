@@ -20,7 +20,8 @@ executable parody-bot
   other-modules:       SpotTypes
                      , NeoParodyInterface
                      , MyRegexes
-  build-depends:       aeson >= 0.10.0.0
+  build-depends:       HTTP >= 4000.2.23
+                     , aeson >= 0.10.0.0
                      , base >= 4.7 && < 5
                      , base64-bytestring >= 1.0.0.1
                      , bytestring >= 0.10.6.0
