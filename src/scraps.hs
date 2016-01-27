@@ -34,3 +34,44 @@ albumToNode = error "not definied yet"
 
   -- let new_pl_name = "sjb_parody_match_v0"
   -- makePlaylist spot_auth new_pl_name
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-- Alchemy Entity scraps
+
+
+  -- let r_entity_name = r ^.. responseBody . key "entities" . values . key "disambiguated" . key "name" . _String
+  -- let r_relevance   = r ^.. responseBody . key "entities" . values . key "relevance" . _Double
+  -- let r_sentiment   = r ^.. responseBody . key "entities" . values . key "sentiment" . key "type" . _String
+  -- let r_type        = r ^.. responseBody . key "entities" . values . key "type" . _String
+
+  -- let st_arys       = r ^.. responseBody . key "entities" . values . key "disambiguated" . key "subType" . _Array
+  -- let r_subtypes    = map (^.. traverse . _String) st_arys
+
+  -- -- website, dbpedia, freebase, yago
+  -- let r_ld_ws = r ^.. responseBody . key "entities" . values . key "disambiguated" . key "website" . _String
+
+  -- ----------------------------------------
+
+
+  -- let r_entity_name   = r ^.. responseBody . key "entities" . values . key "disambiguated" . key "name" . _String
+
+  -- let r_relevance   = r ^.. responseBody . key "entities" . values . key "relevance" . _Double
+  -- let r_sentiment   = r ^.. responseBody . key "entities" . values . key "sentiment" . key "type" . _String
+  -- let r_type        = r ^.. responseBody . key "entities" . values . key "type" . _String
+
+  -- let st_arys       = r ^.. responseBody . key "entities" . values . key "disambiguated" . key "subType" . _Array
+  -- let r_subtypes    = map (^.. traverse . _String) st_arys
+
+  -- -- website, dbpedia, freebase, yago
+  -- let r_ld_ws = r ^.. responseBody . key "entities" . values . key "disambiguated" . key "website" . _String
+
+
+
+
+  
+
+
+  
+  -- let valid_objs = r ^.. responseBody . key "entities" . _Array . traversed . filtered (\v -> (isJust $ v ^? key "type")  && (isJust $ v ^? key "relevance" ) && (isJust $ v ^? key "sentiment") && (isJust $ v ^? key "count") && (isJust $ v ^? key "text") && (isJust $ v ^? key "disambiguated") && (isJust $ v ^? key "disambiguated" . key "name") && (isJust $ v ^? key "disambiguated" . key "subtype"))

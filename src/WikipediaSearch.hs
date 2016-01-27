@@ -1,5 +1,5 @@
 {-# LANGUAGE OverloadedStrings, DeriveGeneric, ScopedTypeVariables, NoImplicitPrelude, QuasiQuotes, GeneralizedNewtypeDeriving #-}
-{-# OPTIONS_GHC -fno-warn-unused-binds -fno-warn-unused-matches #-}
+{-# OPTIONS_GHC -fno-warn-unused-binds -fno-warn-unused-matches #-}let page_url :: Text = "https://en.wikipedia.org/wiki/French_Revolution"
 
 -----------------------------------------------------------------------------
 -- |
