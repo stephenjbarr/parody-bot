@@ -34,13 +34,19 @@ searchOptions :: Text -> Options
 searchOptions search_string = defaults & param "action" .~ ["query"] & param "list" .~ ["search"] & param "format" .~ ["json"] & param "srsearch" .~ [search_string]
 
 
-getTitles :: AsValue body0 => Response body0 -> [Text]
-getTitles r = r ^.. responseBody . key "query" .  key "search" . values . key "title" . _String
+-- getTitles :: AsValue body0 => Response body0 -> [Text]
+getTitles r = r ^? responseBody . key "query" .  key "search" . values . key "title" . _String
 
 
-bestMatchWikipediaURL :: Text -> IO Text
+bestMatchWikipediaURL :: Text -> IO (Maybe Text)
 bestMatchWikipediaURL search_text = do
-  r <- getWith (searchOptions search_text) wiki_endpt
-  let t0 = M.fromJust $ headMay $ getTitles r
-  let tu = T.replace " " "_" t0
-  return $ wiki_base ++ (T.pack (HB.urlEncode (T.unpack (tu))))
+  r <-  getWith (searchOptions search_text) wiki_endpt
+  let t0 = getTitles r
+  
+  let rv = case t0 of
+        Nothing -> Nothing
+        Just x  -> Just $ wiki_base ++ "wiki/" ++ (T.pack (HB.urlEncode (T.unpack ((T.replace " " "_" x)))))
+          where
+            tu :: Text = (T.replace " " "_" x)
+  
+  return $ rv

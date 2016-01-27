@@ -31,12 +31,14 @@ import qualified Database.Neo4j.Transactional.Cypher as TC
 
 ----------------------------------------
 
-trackWikipediaURLFinder :: TrackName -> IO Text
+trackWikipediaURLFinder :: TrackName -> IO (Maybe Text)
 trackWikipediaURLFinder tn = do
-  tn_r0 <- DDG.bestDDGMatchWikipediaURL $ tn
-  tn_r1 <- DDG.bestDDGMatchWikipediaURL $ tn ++ " song"
-  tn_r2 <- DDG.bestDDGMatchWikipediaURL $ tn ++ " song wikipedia"
-  return $ L.maximum $ catMaybes $ [tn_r0, tn_r1, tn_r2]
+  w0    <- W.bestMatchWikipediaURL      $ tn ++ " (song)"
+  tn_r0 <- DDG.bestDDGMatchWikipediaURL $ tn ++ " (song)"
+  -- tn_r1 <- DDG.bestDDGMatchWikipediaURL $ tn ++ " song"
+  -- tn_r2 <- DDG.bestDDGMatchWikipediaURL $ tn ++ " song wikipedia"
+  -- return $ maximumMay $ catMaybes $ [w0, tn_r0, tn_r1, tn_r2]
+  return $ maximumMay $ catMaybes $ (take 3 (repeat w0)) ++ [ tn_r0]
 
 ----------------------------------------
 
@@ -55,9 +57,11 @@ main = do
 
   up_x <- runSuccess getAllTracksWithoutWPQuery
   let u_tracks    = (extractSpotTracks . allFirstElts . TC.vals) up_x
-  let search_term = map (\s -> (track_name s) ++ " by weird al" ) u_tracks
-  best_urls      <- sequence $ map W.bestMatchWikipediaURL search_term
-  links_for_term <- sequence $ map getLinkTextData search_term
+  let track_names = map track_name u_tracks
+  let tnsearch    = map (\t -> t ++ " weird al") track_name
+  -- best_urls      <- sequence $ map trackWikipediaURLFinder tnsearch
+
+  -- links_for_term <- sequence $ map getLinkTextData best_urls
 
   -- for every unprocesed (track:Track)-[:HAS_WP_PAGE]-(wpp:WPPage)
   --   (1) Run AlchemyInterface to get extracted entities

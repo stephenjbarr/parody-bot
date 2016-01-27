@@ -40,8 +40,8 @@ getAbstractURL :: AsValue body0 => Response body0 -> Maybe Text
 getAbstractURL r = r ^? responseBody . key "AbstractURL" . _String
 
 
-bestDDGMatchWikipediaURL :: Text -> IO (Maybe Text)
-bestDDGMatchWikipediaURL search_text = do
+bestDDGMatchAbstractURL :: Text -> IO (Maybe Text)
+bestDDGMatchAbstractURL search_text = do
   r <- getWith (searchOptions search_text) ddg_base
   let u = getAbstractURL r
   let rv = case u of        
