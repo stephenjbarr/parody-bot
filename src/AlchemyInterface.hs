@@ -13,6 +13,7 @@
 ----------------------------------------------------------------------------
 
 
+module AlchemyInterface where
 
 import           ClassyPrelude
 

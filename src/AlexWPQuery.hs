@@ -14,6 +14,8 @@
 -- 
 ----------------------------------------------------------------------------
 
+module AlexWPQuery where
+
 import ClassyPrelude
 import Network.Wreq
 import Control.Lens hiding ((.=))
@@ -27,6 +29,8 @@ import qualified Data.Text as T
 import qualified Data.List as L
 
 import System.Process
+
+
 
 
 -- let jp_args :: [String] = ["-jar", "WikiLinks.jar" ,"https://en.wikipedia.org/wiki/Earth"]
