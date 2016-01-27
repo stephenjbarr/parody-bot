@@ -26,6 +26,11 @@ import qualified Data.HashMap.Strict as HMS
 import qualified Data.HashMap.Lazy   as HML
 --------------------------------------------------------------------------------
 
+import Control.Lens hiding ((.=))
+import Data.Aeson --  (toJSON, pairs, (.=))
+import Data.Aeson.Lens
+
+--------------------------------------------------------------------------------
 
 -- | Port for Neo4j
 neo_port :: Port
@@ -48,6 +53,14 @@ emptyParams :: TC.Params =  HML.fromList []
 -- | Run a Neo4j Query
 run :: forall a. Neo4j a -> IO a
 run = withAuthConnection neo_host neo_port neo_creds
+
+
+runSuccess :: Text -> IO TC.Result
+runSuccess query_text = do
+  let query       = TC.cypher query_text emptyParams
+  let transaction = TC.runTransaction query
+  result          <- run $ transaction
+  return $ TC.fromSuccess result
 
 --------------------------------------------------------------------------------
 
@@ -144,8 +157,73 @@ addItem si = do
 --------------------------------------------------------------------------------
 
 
+allFirstElts :: [[a]] -> [a]
+allFirstElts x = catMaybes $ map headMay x 
+
+--------------------------------------------------------------------------------
+
+--         /$$$$$$$$                           /$$                
+--        |__  $$__/                          | $$                
+--           | $$  /$$$$$$  /$$$$$$   /$$$$$$$| $$   /$$  /$$$$$$$
+--           | $$ /$$__  $$|____  $$ /$$_____/| $$  /$$/ /$$_____/
+--           | $$| $$  \__/ /$$$$$$$| $$      | $$$$$$/ |  $$$$$$ 
+--           | $$| $$      /$$__  $$| $$      | $$_  $$  \____  $$
+--           | $$| $$     |  $$$$$$$|  $$$$$$$| $$ \  $$ /$$$$$$$/
+--           |__/|__/      \_______/ \_______/|__/  \__/|_______/ 
+                                                        
+
+getAllTracksQuery :: Text
+getAllTracksQuery = "MATCH (t:Track) return t limit 10"
+
+getAllTracksWithoutWPQuery :: Text
+getAllTracksWithoutWPQuery = "MATCH (t:Track) OPTIONAL MATCH (t)-[r:HAS_WP_PAGE]-() WHERE r is null return t limit 10"
 
 
+extractSpotTracks :: (Traversable t, AsValue a) => t a -> [SpotTrack]
+extractSpotTracks v = zipWith3 SpotTrack t_names t_ids t_uris
+  where
+    t_names = v ^.. traverse . key "name"  . _String
+    t_ids   = v ^.. traverse . key "id"   . _String
+    t_uris  = v ^.. traverse . key "uri" . _String
+
+
+
+--------------------------------------------------------------------------------
+
+--          /$$$$$$              /$$     /$$             /$$             
+--         /$$__  $$            | $$    |__/            | $$             
+--        | $$  \ $$  /$$$$$$  /$$$$$$   /$$  /$$$$$$$ /$$$$$$   /$$$$$$$
+--        | $$$$$$$$ /$$__  $$|_  $$_/  | $$ /$$_____/|_  $$_/  /$$_____/
+--        | $$__  $$| $$  \__/  | $$    | $$|  $$$$$$   | $$   |  $$$$$$ 
+--        | $$  | $$| $$        | $$ /$$| $$ \____  $$  | $$ /$$\____  $$
+--        | $$  | $$| $$        |  $$$$/| $$ /$$$$$$$/  |  $$$$//$$$$$$$/
+--        |__/  |__/|__/         \___/  |__/|_______/    \___/ |_______/ 
+
+
+getAllArtistsQuery :: Text
+getAllArtistsQuery = "MATCH (a:Artist) return a limit 10"
+
+getAllArtistsWithoutWPQuery :: Text
+getAllArtistsWithoutWPQuery = "MATCH (a:Artist) OPTIONAL MATCH (a)-[r:HAS_WP_PAGE]-() WHERE r is null return a limit 10"
+
+
+extractSpotArtists :: (Traversable t, AsValue a) => t a -> [SpotArtist]
+extractSpotArtists v = zipWith3 SpotArtist t_names t_ids t_uris
+  where
+    t_names = v ^.. traverse . key "name"  . _String
+    t_ids   = v ^.. traverse . key "id"   . _String
+    t_uris  = v ^.. traverse . key "uri" . _String
+                                                               
+
+
+--------------------------------------------------------------------------------
+
+runGetAllTracksGraph :: IO TC.Result
+runGetAllTracksGraph = do
+  g <- runSuccess getAllTracksWithoutWPQuery
+  return $ g
+
+--------------------------------------------------------------------------------
 
 lookupItem :: SpotItem -> IO (Maybe Node)
 lookupItem = error "ndy"
@@ -164,3 +242,7 @@ addSameArticleRelationship :: SpotItem -> SpotItem  -> IO Graph
 addSameArticleRelationship = error "ndy"
 
 
+--------------------------------------------------------------------------------
+-- -- DEBUG SHIT
+--  g <- runSuccess getAllTracksWithoutWPQuery
+--  let v = allFirstElts $ TC.vals g
