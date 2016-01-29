@@ -105,9 +105,19 @@ itemToLabels si = case si of
  SPAlbum x    ->  ["Album"]
  SPPlaylist x ->  ["Playlist"]
 
+-- SAVING THIS LINE TO REMIND MYSELF THAT I AM AN IDIOT SOMETIMES.
+item_types = ["Track", "Artist", "Album", "Playlist"]
 
 -------------------------------------------------------------------------------- 
 
+
+makeItem :: Text -> (Text, Text, Text) -> Maybe SpotItem
+makeItem itype (n, i, u) = case itype of  
+  "Track"    -> Just $ SPTrack    $ SpotTrack    n i u
+  "Artist"   -> Just $ SPArtist   $ SpotArtist   n i u
+  "Album"    -> Just $ SPAlbum    $ SpotAlbum    n i u
+  "Playlist" -> Just $ SPPlaylist $ SpotPlaylist n i u
+  _          -> Nothing
 
 -- | For a SpotItem, create a NodeBatchIdentifier that can be inserted into the graph
 -- as part of a batch operation. This is the function that should be exported, and
@@ -119,6 +129,25 @@ itemToNode item = do
   n0 <- B.createNode item_props 
   -- l  <- B.addLabels (itemToLabels item) n0
   return n0
+
+----------------------------------------
+
+singleTextValueProperty :: PropertyValue -> Maybe Text
+singleTextValueProperty pv = case pv of ValueProperty (TextVal x) -> Just x
+                                        _ -> Nothing
+
+
+
+nodeToItem :: Graph -> Node -> Maybe SpotItem
+nodeToItem g n = do
+  let n_path   = nodePath n
+  let n_labs   = getNodeLabels n_path g
+  pos_type <- headMay $ map fst $ filter (\x -> (snd x) == True) $ zip item_types $ map ((flip member) n_labs) item_types
+  let n_props  = getNodeProperties n
+  i_name   <- (lookup "name" n_props) >>= singleTextValueProperty
+  i_id     <- (lookup "id" n_props)   >>= singleTextValueProperty
+  i_uri    <- (lookup "uri" n_props)  >>= singleTextValueProperty
+  makeItem pos_type (i_name, i_id, i_uri)
 
 --------------------------------------------------------------------------------
 
@@ -159,6 +188,30 @@ addItem si = do
 
 allFirstElts :: [[a]] -> [a]
 allFirstElts x = catMaybes $ map headMay x 
+
+--------------------------------------------------------------------------------
+--       
+--        /$$$$$$                                /$$                    
+--       /$$__  $$                              |__/                    
+--      | $$  \ $$ /$$   /$$  /$$$$$$   /$$$$$$  /$$  /$$$$$$   /$$$$$$$
+--      | $$  | $$| $$  | $$ /$$__  $$ /$$__  $$| $$ /$$__  $$ /$$_____/
+--      | $$  | $$| $$  | $$| $$$$$$$$| $$  \__/| $$| $$$$$$$$|  $$$$$$ 
+--      | $$/$$ $$| $$  | $$| $$_____/| $$      | $$| $$_____/ \____  $$
+--      |  $$$$$$/|  $$$$$$/|  $$$$$$$| $$      | $$|  $$$$$$$ /$$$$$$$/
+--       \____ $$$ \______/  \_______/|__/      |__/ \_______/|_______/ 
+--            \__/                                                      
+--                                                                      
+
+
+-- getAllArtistTrackPairs :: IO [(SpotTrack, SpotArtist)]
+-- getAllArtistTrackPairs = do
+--   let q = "MATCH (t:Track)-[ar:AUTHORED]-(a:Artist) return t,ar,a"
+--   g0 <- runSuccess q
+--   let g = TC.graph g0
+  
+
+
+
 
 --------------------------------------------------------------------------------
 

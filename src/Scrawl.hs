@@ -25,6 +25,8 @@ import WikipediaSearch      as W
 import AlchemyInterface     as AI
 import DuckDuckGoSearch     as DDG
 
+
+import qualified Data.ByteString.Lazy as BL
 ----------------------------------------
 import qualified Database.Neo4j.Transactional.Cypher as TC
 
@@ -33,12 +35,13 @@ import qualified Database.Neo4j.Transactional.Cypher as TC
 
 trackWikipediaURLFinder :: TrackName -> IO (Maybe Text)
 trackWikipediaURLFinder tn = do
+  w     <- W.bestMatchWikipediaURL      $ tn ++ ""
   w0    <- W.bestMatchWikipediaURL      $ tn ++ " (song)"
-  tn_r0 <- DDG.bestDDGMatchWikipediaURL $ tn ++ " (song)"
+  tn_r0 <- DDG.bestDDGMatchAbstractURL  $ tn ++ " (song)"
   -- tn_r1 <- DDG.bestDDGMatchWikipediaURL $ tn ++ " song"
   -- tn_r2 <- DDG.bestDDGMatchWikipediaURL $ tn ++ " song wikipedia"
   -- return $ maximumMay $ catMaybes $ [w0, tn_r0, tn_r1, tn_r2]
-  return $ maximumMay $ catMaybes $ (take 3 (repeat w0)) ++ [ tn_r0]
+  return $ maximumMay $ catMaybes $ (take 3 (repeat w)) ++ (take 2 (repeat w0)) ++ [ tn_r0]
 
 ----------------------------------------
 
