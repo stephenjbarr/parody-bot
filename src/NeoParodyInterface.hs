@@ -131,13 +131,21 @@ itemToNode item = do
   return n0
 
 ----------------------------------------
+-- Neo4j property accessors.
 
+
+-- | This is to convert a ValueProperty into a Maybe Text
 singleTextValueProperty :: PropertyValue -> Maybe Text
 singleTextValueProperty pv = case pv of ValueProperty (TextVal x) -> Just x
                                         _ -> Nothing
 
 
+------------------------------
 
+-- | For a given graph and a particular node (that better fucking be within that graph),
+-- then create a SpotItem. The general idea behind this approach (and
+-- any subsequent usages of the Neo4j + Haskell combination is that
+-- the "Item"s are head nodes of structures that may exist within Neo4j.
 nodeToItem :: Graph -> Node -> Maybe SpotItem
 nodeToItem g n = do
   let n_path   = nodePath n
@@ -148,6 +156,8 @@ nodeToItem g n = do
   i_id     <- (lookup "id" n_props)   >>= singleTextValueProperty
   i_uri    <- (lookup "uri" n_props)  >>= singleTextValueProperty
   makeItem pos_type (i_name, i_id, i_uri)
+
+
 
 --------------------------------------------------------------------------------
 
@@ -207,7 +217,7 @@ allFirstElts x = catMaybes $ map headMay x
 -- getAllArtistTrackPairs = do
 --   let q = "MATCH (t:Track)-[ar:AUTHORED]-(a:Artist) return t,ar,a"
 --   g0 <- runSuccess q
---   let g = TC.graph g0
+--   let g = Data.List.head $ TC.graph g0
   
 
 
