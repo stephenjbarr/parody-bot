@@ -30,6 +30,8 @@ import Control.Lens hiding ((.=))
 import Data.Aeson --  (toJSON, pairs, (.=))
 import Data.Aeson.Lens
 
+import ParodyBotUtil
+
 --------------------------------------------------------------------------------
 
 -- | Port for Neo4j
@@ -142,10 +144,13 @@ singleTextValueProperty pv = case pv of ValueProperty (TextVal x) -> Just x
 
 ------------------------------
 
--- | For a given graph and a particular node (that better fucking be within that graph),
--- then create a SpotItem. The general idea behind this approach (and
--- any subsequent usages of the Neo4j + Haskell combination is that
--- the "Item"s are head nodes of structures that may exist within Neo4j.
+-- | For a given graph and a particular node (that better fucking be
+-- a part of the accompanying graph), then create a SpotItem. The
+-- general idea behind this approach (and any subsequent usages of the
+-- Neo4j + Haskell combination is that the "Item"s are head nodes of
+-- structures that may exist within Neo4j.
+-- 
+-- 
 nodeToItem :: Graph -> Node -> Maybe SpotItem
 nodeToItem g n = do
   let n_path   = nodePath n
@@ -158,6 +163,13 @@ nodeToItem g n = do
   makeItem pos_type (i_name, i_id, i_uri)
 
 
+-- | Get some items out of the Graph. 
+extractItems :: Graph -> HashMap Node SpotItem
+extractItems g = s_items
+  where
+    nodes   = getNodes g
+    items   = map (nodeToItem g) nodes
+    s_items = 
 
 --------------------------------------------------------------------------------
 
