@@ -164,12 +164,13 @@ nodeToItem g n = do
 
 
 -- | Get some items out of the Graph. 
-extractItems :: Graph -> HashMap Node SpotItem
+extractItems :: Graph -> HashMap NodePath SpotItem
 extractItems g = s_items
   where
-    nodes   = getNodes g
+    nodes      = getNodes g
+    node_paths = map nodePath nodes
     items   = map (nodeToItem g) nodes
-    s_items = 
+    s_items = HMS.fromList $ catMaybes $ filterListJustSnd $ zip node_paths items
 
 --------------------------------------------------------------------------------
 
