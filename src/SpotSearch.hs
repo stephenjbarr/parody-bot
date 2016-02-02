@@ -91,6 +91,14 @@ searchForTrack oab (song_name, artist_name) = do
   let ruri  = rn ^.. responseBody . key "tracks" . key "items" . values . key "uri" . _String
   return $ headMay $ zipWith3 SpotTrack rname rid ruri
 
+-- searchEndptByID :: Auth -> Text -> Text -> IO (Response ByteString)
+searchEndptByID oab ep_final id = do
+  let my_opts = defaults & auth ?~ oab
+  let endpt   = spot_endpt ++ (T.unpack ep_final) ++ "/" ++ (T.unpack id)
+  rn <- getWith my_opts endpt
+  return rn
+
+
 getMyUserID :: Options -> IO UserID
 getMyUserID opts = do
   r <- getWith opts (spot_endpt ++ "me")

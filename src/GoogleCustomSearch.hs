@@ -61,6 +61,7 @@ url_cse_endpt = "https://www.googleapis.com/customsearch/v1"
 -- debug shit
 -- creds <- getGoogleCSECred "keys.yml"
 -- let query = "weird al wikipedia"
+-- let query = "handy weird al wikipedia"
 
 
 getQueryUrls :: GoogleCSECred -> Text -> IO [Text]

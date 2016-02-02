@@ -80,6 +80,37 @@ data SpotItem =
   | SPAlbum    SpotAlbum
   | SPPlaylist SpotPlaylist deriving (Show, Eq, Generic)
 
+
+getSpotItemName :: SpotItem -> Text
+getSpotItemName si = case si of
+   SPTrack x    -> track_name  x
+   SPArtist x   -> artist_name x
+   SPAlbum x    -> album_name  x
+   SPPlaylist x -> playlist_name x
+
+extractSpotTrack :: SpotItem -> Maybe SpotTrack
+extractSpotTrack si = case si of
+  SPTrack x     -> Just x
+  _             -> Nothing
+
+extractSpotArtist :: SpotItem -> Maybe SpotArtist
+extractSpotArtist si = case si of
+  SPArtist x     -> Just x
+  _             -> Nothing
+
+extractSpotAlbum :: SpotItem -> Maybe SpotAlbum
+extractSpotAlbum si = case si of
+  SPAlbum x     -> Just x
+  _             -> Nothing
+
+
+extractSpotPlaylist :: SpotItem -> Maybe SpotPlaylist
+extractSpotPlaylist si = case si of
+  SPPlaylist x     -> Just x
+  _             -> Nothing
+
+
+
 --------------------------------------------------------------------------------
 
 spotItemName :: SpotItem -> Text

@@ -51,3 +51,8 @@ makePossibleDict abl = HMS.fromList $ catMaybes $ filterListJustSnd abl
 
 combine2Tupe :: [(a,a)] -> [a]
 combine2Tupe x = L.concat $ map (\(x,y) -> [x] ++ [y]) x
+
+
+-- TODO this should be a Maybe
+wpQueryGen :: [SpotItem] -> Text
+wpQueryGen xs = concat $ intersperse " " $ (map getSpotItemName xs)

@@ -141,6 +141,9 @@ singleTextValueProperty :: PropertyValue -> Maybe Text
 singleTextValueProperty pv = case pv of ValueProperty (TextVal x) -> Just x
                                         _ -> Nothing
 
+mkSingleValueTextProperty :: Text -> PropertyValue
+mkSingleValueTextProperty x = ValueProperty (TextVal x)
+
 
 ------------------------------
 
@@ -254,6 +257,8 @@ getAllTracksQuery = "MATCH (t:Track) return t limit 10"
 getAllTracksWithoutWPQuery :: Text
 getAllTracksWithoutWPQuery = "MATCH (t:Track) OPTIONAL MATCH (t)-[r:HAS_WP_PAGE]-() WHERE r is null return t limit 10"
 
+getTracksAndArtistsWithoutWPQuery :: Text
+getTracksAndArtistsWithoutWPQuery = "MATCH (t:Track)<-[:AUTHORED]-(a:Artist) OPTIONAL MATCH (t)-[r:HAS_WP_PAGE]-() WHERE r is null return t,a,r limit 10"
 
 extractSpotTracks :: (Traversable t, AsValue a) => t a -> [SpotTrack]
 extractSpotTracks v = zipWith3 SpotTrack t_names t_ids t_uris
@@ -322,3 +327,9 @@ addSameArticleRelationship = error "ndy"
 -- -- DEBUG SHIT
 --  g <- runSuccess getAllTracksWithoutWPQuery
 --  let v = allFirstElts $ TC.vals g
+
+
+-- addNamedProperty ::  Text -> Text 
+addNamedProperty node_ref prop_name prop_val node_path = run $ B.runBatch $ do
+  let pval = mkSingleValueTextProperty prop_val
+  B.setProperties node_ref (HMS.fromList [(prop_name, pval)])

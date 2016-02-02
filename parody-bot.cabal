@@ -55,6 +55,7 @@ executable scrawl
                      , AlexWPQuery
                      , WikipediaSearch
                      , ParodyBotUtil
+                     , GoogleCustomSearch
   build-depends:       HTTP >= 4000.2.23
                      , aeson >= 0.10.0.0
                      , aeson-pretty >= 0.7.2

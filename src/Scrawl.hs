@@ -24,7 +24,7 @@ import AlexWPQuery          as A
 import WikipediaSearch      as W
 import AlchemyInterface     as AI
 import DuckDuckGoSearch     as DDG
-
+import GoogleCustomSearch   as CSE
 
 import qualified Data.ByteString.Lazy as BL
 ----------------------------------------
@@ -46,6 +46,20 @@ trackWikipediaURLFinder tn = do
 ----------------------------------------
 
 
+
+-- TODO this should be a Maybe
+wpQueryGen :: [SpotItem] -> Text
+wpQueryGen xs = concat $ intersperse " " $ (map getSpotItemName xs)
+  
+  
+  
+
+-- r <- runSuccess "match (a:Artist)-[:AUTHORED]-(t:Track) return a,t;"
+-- let gs = TC.graph r
+-- let g = Data.List.head gs
+-- let items = extractItems g
+-- let xs = HMS.elems items
+
 main :: IO ()
 main = do
   print "Fuck yes"
@@ -58,11 +72,19 @@ main = do
   --       (ii)  CREATE (track:Track)-[:HAS_WP_PAGE]-(wpp:WPPage)
   --       (iii) For (wpp:WPPage) link, set attribute processed = false
 
-  up_x <- runSuccess getAllTracksWithoutWPQuery
-  let u_tracks    = (extractSpotTracks . allFirstElts . TC.vals) up_x
-  let track_names = map track_name u_tracks
-  let tnsearch    = map (\t -> t ++ " weird al") track_name
+  up_x <- runSuccess getTracksAndArtistsWithoutWPQuery
+  let sp_items    = map (HMS.elems . extractItems) $ TC.graph  up_x
+  let sp_texts    = map wpQueryGen sp_items
+
+
+  -- let track_names = map track_name u_tracks
+  -- let tnsearch    = map (\t -> t ++ " weird al") track_name
   -- best_urls      <- sequence $ map trackWikipediaURLFinder tnsearch
+  goog_creds <- getGoogleCSECred "keys.yml"
+  sp_pages   <- sequence $ map (getQueryUrls goog_creds) sp_texts
+  let sp0    = map (Data.List.head) sp_pages
+
+
 
   -- links_for_term <- sequence $ map getLinkTextData best_urls
 
